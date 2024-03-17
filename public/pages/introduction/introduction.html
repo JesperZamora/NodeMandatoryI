@@ -1,0 +1,207 @@
+<section class="layout-container">
+  <div class="layout-basis">
+    <div class="layout">
+      <!--Node.js & NPM-->
+      <h4 class="header-text">Node.js & NPM</h4>
+      <p class="text">
+        Node.js is an asynchronous event-driven JavaScript runtime environment for building scalable web applications. Its asynchronous and event-driven nature enables it to handle multiple requests simultaneously, eliminating the need to wait for one task to finish before starting another.
+        With Node.js, developers can seamlessly create both front-end and back-end components using a single language, eliminating the need to learn additional languages for full-stack development.
+      </p>
+    </div>
+
+    <div class="layout">
+      <p class="text">
+        npm (Node Package Manager) serves as the primary package manager for Node.js, offering a vast repository of open-source software. Utilizing npm, developers can easily download and install pre-built packages into their projects, streamlining the development process and ensuring code stability through tested packages.
+      </p>
+
+    </div>
+
+    <!--Installation-->
+    <div class="layout margin-top20 center-layout">
+      <h4 class="header-text">
+        Installation
+      </h4>
+      <p class="text">
+        To get started with Node.js, simply install it from <a href="https://nodejs.org/en" target="_blank">Node.js's</a> website. npm is automatically installed alongside Node.js. You can check the installed versions using node -v and npm -v.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/node-version.png" alt="node-version">
+    </div>
+
+    <div class="layout">
+      <p class="text">
+        npm offers two installation methods: local and global. Local installation ensures that packages are confined to the project folder, aiding deployment and preventing conflicts. To install a package locally, use npm install <package name>, for example, npm install express.
+      </p>
+      <p class="text">
+        Global installation makes packages accessible across all project folders. To install a package globally, use npm install -g <package name>, for example, npm install -g nodemon.
+      </p>
+    </div>
+
+    <!--Git, Github & Commands-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">
+        Git, Github & Commands
+      </h4>
+      <p class="text">
+        When starting it a project you want to make sure that your code stored correctly and kept track of.  Git is a free open-source version control system where you can keep track of code changes and enable multiple developers to work together on same project. Even more it allows you make branches where you can build your features for you without messing with the existing tested proven code and marching, and much more.
+      </p>
+    </div>
+
+    <div class="layout">
+      <p class="text">
+        Go to your github and make a repository and get your git url. In your cli, write git clone <your repository url>.
+        Git add -A (this will stage all the changes).
+        Git commit -m “message”.
+        Git push.
+      </p>
+    </div>
+
+    <!--Variables-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">
+        Variables
+      </h4>
+      <p class="text">
+        In simple terms, a variable is container that holds a value and points to the storage location where the data is stored. This value can me changed and modified throughout the execution of the program.
+        In JavaScript we can declare variable by using the keywords “var”, “let, “const”, followed by the variable name. But due the difference in scooping there was a shift from using “var” to “let and “const”.
+      </p>
+    </div>
+    
+    <div class="layout center-layout">
+      <p class="text">
+        Before the release of ES6 (ECMAScript 2015), var was the primary keyword used for variable declaration. Any variable declared with `var` are function- or globally scooped, which means they are accessible thought the entire function they are declared with no regards for the block within the function.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/variables-var.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        After the introduction of ES6 `let` and `const` was introduced. Variable declared with `let` and `const` are blocked scooped, meaning they only exist inside the block that is enclosed my curly braces in where they are declared. The difference in `let` and `const` is that `let` allows variable values to be reassigned and `const` does not allow this once the value has been assigned.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/variables-let-const.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        Because of the difference in scooping, `let` and `const` are the preferred over `var`. The block scooping provides better control over variables and reduces the risk of unintended side effect ands bugs. `const` also helps prevent accidental re-assignment of variable, when you know that the value shouldn’t be changed after initialization, which is a common source of bugs.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/variables-let.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/variables-const.png" alt="node-version">
+    </div>
+
+    <!--Datatypes-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">
+        Datatypes
+      </h4>
+      <p class="text">
+        In JavaScript data types represent the kind of value that a variable can hold and there are several types.
+      </p>
+
+    </div>
+    
+    <div class="layout center-layout">
+      <p class="text">
+        Primitive Data Types:
+      </p>
+      <ul class="list">
+        <li>String: Represents textual data, enclosed within single ('') or double ("") quotes.</li>
+        <li>Number: Represents numeric values, including integers and floating-point numbers.</li>
+        <li>Boolean: Represents true or false values.</li>
+        <li>Undefined: Represents a variable that has been declared but not assigned a value.</li>
+        <li>Null: Represents the intentional absence of any value.</li>
+        <li>Symbol (Introduced in ES6): Represents unique identifiers</li>
+      </ul>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/datatypes-primitive.png" alt="node-version">
+    
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        Reference Data Types:
+      </p>
+      <ul class="list">
+        <li>Object: Represents a collection of key-value pairs, often used for complex data structures.</li>
+        <li>Array: Represents a collection of elements, each identified by an index.</li>
+        <li>Function: Represents a reusable block of code that performs a specific task.</li>
+      </ul>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/datatypes-reference.png" alt="node-version">
+    </div>
+
+    <!--Type Coercion:-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">
+        Type Coercion
+      </h4>
+      <p class="text">
+        Type Coercion is the automatically conversion of values from one data type to another. This process is performed by the JavaScript Engine and occurs when input of different data types is used in an operation.
+      </p>
+      <p class="text">
+        This function takes in two parameters where both are expected to be strings, but when the function is called “5” as a string and `5` as number is passed.  Type coercion will happened and converts the number to a string, which will result in “55”
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/typecoercion.png" alt="node-version">
+    </div>
+
+    <!--How to avoid-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">
+        How to avoid
+      </h4>
+      <p class="text">
+        There are different approaches of avoid type coercion. One way is using the Strict Comparison Operators `===` and `!==`. This will compare both the value and the type without performing type coercion.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/typecoercion-avoid.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        You can also use Explicit Type Convension (type casting) instead. Here you convert the values to the desired data type using functions like `parseInt` or `parseFloat`.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/typecoercion-avoid-parse.png" alt="node-version">
+    </div>
+
+    <!--API Design-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">
+        API Design
+      </h4>
+      <h4 class="header-text size18">
+        Using the right HTTP verb:
+      </h4>
+      <p class="text">
+        HTTP verbs are used to indicate the action to be perfomed. Choosing an appropiate HTTP-verb for each endpoint ensures that we are following the RESTful principles.
+        The commenly used HTTP-verbs in RESTfull API are:
+      </p>
+      <ul class="list">
+        <li>GET: Retrive data from server.</li>
+        <li>POST: Creates a new resource.</li>
+        <li>PUT: Updates an existing resource.</li>
+        <li>PATCH: Partially updates an existing resource.</li>
+        <li>DELETE: Deletes a resource.</li>
+      </ul>
+    </div>
+
+    <div class="layout">
+      <h4 class="header-text size18">
+        Ordering:
+      </h4>
+      <p class="text">
+        In our back-end, the ordering of our endpoint is important because it maintain consistency and structure our enpoints with their associated functionalities. Maintaining this convention helps developers understand and use the API more effectively and reduce confusion.
+      </p>
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">
+        Naming (noun, plural):
+      </h4>
+      <p class="text">
+        Resource naming convention plays a very important role in RESTful API design, because it represents the entities being manipulated, such as users, drinks, dogs etc.
+        Resource names should be nouns and should typically be plural to represent a collecton. For example if you have a resource representing drink, the endpoint can be "/drinks" to represent a collection of drinks.
+      </p>
+      <a class="center-layout" href="https://github.com/JesperZamora/Node.js_2024/blob/main/00._Assignments/01._Introduction_Exercises/REST_API_DESIGN_AI_MODELS.md"
+      target="_blank">
+        <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/API-Design.png" alt="node-version">
+      </a>
+
+    </div>
+  </div>
+</section>

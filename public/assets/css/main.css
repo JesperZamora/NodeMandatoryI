@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 1);
+}
+/* rgb(250, 250, 250, 1)*/
+main {
+  flex: 1;
+}
+
+h1 {
+  flex: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.96);
+  gap: 5px;
+  padding: 11px 40px 11px;
+  position: fixed;
+  box-shadow: 0px 1px 8px rgba(200, 200, 200, 0.1);
+  z-index: 999;
+}
+
+#navlinks a{
+  padding: 1px 5px 3px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+#navlinks a:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+#logo {
+  width: 14em;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 18px 0 22px;
+  border-top: solid 1px rgb(0, 0, 0, 0.1);
+  line-height: 1.5rem;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/*---------home----------*/
+.hero {
+  display: flex;
+  gap: 30px;
+  width: 94%;
+  height: 500px; /*testing height for hero*/
+  padding: 140px 20px 40px;
+  margin-bottom: 100px;
+}
+
+.heroTextContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: right;
+  line-height: 2.4rem;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+.heroTextContainer .welcomeText {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.heroTextContainer p {
+  font-size: 24px;
+  font-weight: 300;
+  width: 98%;
+}
+
+.heroTextContainer .feelFree {
+  margin-top: 10px;
+  font-size: 26;
+  font-weight: 400;
+}
+
+.heroTextContainer .fullStack {
+  font-size: 26;
+  font-weight: 400;
+  padding: 3px 10px 5px 10px;
+  background-color: #000000;
+  color: #fff;
+}
+
+.hero img {
+  max-width: 430px; 
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 40px; 
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 100px;
+  box-shadow: 0px 2px 8px rgba(150, 150, 150, 0.8);
+}
+
+.roadmap {  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 100px;
+}
+
+.roadmapItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f6f6f7;
+  padding: 20px;
+  border-radius: 4px;
+  width: 340px;
+  height: 210px;
+  transition: .4s;
+}
+
+.roadmapItem:hover {
+  transform: scale(1.05);
+  background-color: #eeeeef;
+}
+
+
+.roadmap a {
+  text-decoration: none;
+}
+
+.roadmapItem h4 {
+  font-size: 18px;
+  color: #000000;
+}
+
+.roadmapItem ul{
+  line-height: 1.4rem;
+  margin-left: 20px;
+  list-style-type: disc;
+  color: rgb(56, 56, 56);
+}
+
+
+/*---------Generic page layout----------*/
+.layout-container {
+  display: flex;
+  justify-content: center;
+  width: 94%;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.layout-basis {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.layout {
+  padding: 10px;
+}
+
+.margin-top10 {
+  margin-top: 10px;
+}
+.margin-top20 {
+  margin-top: 20px;
+}
+
+.margin-top30 {
+  margin-top: 30px;
+}
+
+.margin-top50 {
+  margin-top: 50px;
+}
+
+.header-text {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.size18 {
+  font-size: 16px;
+}
+
+.text {
+  line-height: 1.6rem;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.list {
+  line-height: 1.6rem;
+  font-size: 16px;
+  padding: 5px 40px 10px;
+}
+
+.center-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-size500 {
+  width: 500px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.image-size600 {
+  width: 600px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.image-alignmid {
+  align-self: center;
+}
+
+a {
+  cursor: pointer;
+}
