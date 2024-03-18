@@ -1,1 +1,134 @@
-<h1>Serving HTML files</h1>
+<section class="layout-container">
+  <div class="layout-basis">
+    <!--Nodemon-->
+    <div class="layout center-layout">
+      <h4 class="header-text">Nodemon</h4>
+      <p class="text">
+        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/function.png" alt="node-version">
+    </div>
+
+    <div class="layout">
+      <p class="text">
+        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+      </p>
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <h4 class="header-text">Install Nodemon</h4>
+      <p class="text">
+        You can either install it locally or globally. The key difference is that locally you Nodemon are installed within the project’s directory and globally which allows for specific have customization. Each project can have its own version or can have specific needs of listening to specific files for changes. A global installation will make Nodemon accessible from any directory and you don’t have to install it every time you start a new project. But then the customization option is not flexible anymore.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <!--Loops & Loop methods-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">Loops & Loop methods</h4>
+      <p class="text">
+        In JavaScript, we have many options when it comes to iterating through an array. The loops can be divided into “loops” and “loop methods” each referring to different concepts. 
+        Loops are in general structure that allows you to control an execute a block of code repeatedly until a condition is met. Som of the types of loops:
+      </p>
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">For loop:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">While loop:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Enhanced for loop:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">For... of loop:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top50">
+      <p class="text">
+        On the other hand, loop methods are provided by JavaScript and are build-in functions in the arrays to iterate over their elements. The other key difference is that when performing operation on the inside an array element like changing values it will not impact the existing arrays elements. The loop method like map() will return a newly created array with the elements and modifications. Other practical usages are that these methods can be chained together making it more functional.
+      </p>
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Map:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Filter:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Reduce:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Method chaining:</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+
+    <!--Avoiding side effects-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">Avoiding side effects</h4>
+      <p class="text">
+        When we use loop methods, we also avoid potential side effects that a function can make and to adhere to function programming principles we need to make sure that our functions is “pure” and do note produces any side effect. As shown the function doubleNumbers modifies the existing array and we don’t want that, so we use a map() instead, to get a new array with the changes and our original array is still intact. This makes the function more predictable, easier to understand and you avoid introducing unintended changes into your original data. 
+      </p>
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text size18">Function causing side effect</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <h4 class="header-text size18">Functional approach to avoid side effect</h4>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+
+    <!--Anatomy of URL-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Anatomy of URL (not finished)</h4>
+      <p class="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quisquam, quos totam harum deleniti reiciendis minus ut quae cumque ea reprehenderit quibusdam ipsum. At est sint enim adipisci tempora! Eos dignissimos beatae quia, libero voluptas sequi? Ad, quibusdam incidunt impedit nihil reiciendis doloremque sit eum voluptatem minima quis numquam alias aspernatur enim iusto nam ipsum, temporibus est adipisci expedita saepe.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout">
+      <ul class="list">
+        <li>Protocol: Indicates the communication protocol used to access the resource on the server. Common protocols include HTTP, HTTPS, FTP, and others. In the example "https://www.google.com/search?q=test&oq=test", the protocol is "https".</li>
+        <li>Domain: Specifies the domain name of the server hosting the resource. It typically consists of a sub-domain and a top-level domain. In the example, "www" is the sub-domain, and "google.com" is the top-level domain.</li>
+        <li>Path: Identifies the specific resource or endpoint on the server. It comes after the domain and may include additional sub-paths separated by slashes. In the example, "/search" is the path.</li>
+        <li>Query String: Contains additional data passed to the server as key-value pairs. It starts with a question mark (?) and consists of multiple key-value pairs separated by ampersands (&). In the example, "?q=test&oq=test" is the query string.</li>
+        <li>Query Parameters: These are the individual key-value pairs within the query string. Each parameter consists of a key (e.g., "q") and a value (e.g., "test"). In the example, "q=test" and "oq=test" are query parameters.</li>
+      </ul>
+    </div>
+
+    <!--Express post request & body parsing-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Express post request & body parsing (not finished)</h4>
+      <p class="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quisquam, quos totam harum deleniti reiciendis minus ut quae cumque ea reprehenderit quibusdam ipsum. At est sint enim adipisci tempora! Eos dignissimos beatae quia, libero voluptas sequi? Ad, quibusdam incidunt impedit nihil reiciendis doloremque sit eum voluptatem minima quis numquam alias aspernatur enim iusto nam ipsum, temporibus est adipisci expedita saepe.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+  </div>
+</section>
