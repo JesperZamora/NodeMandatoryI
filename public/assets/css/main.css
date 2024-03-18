@@ -236,7 +236,13 @@ footer p {
 .image-size600 {
   width: 600px;
   padding: 15px;
-  border-radius: 20px;
+  border-radius: 25px;
+}
+
+.image-size700 {
+  width: 700px;
+  padding: 15px;
+  border-radius: 25px;
 }
 
 .image-alignmid {

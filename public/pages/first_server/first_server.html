@@ -1,1 +1,120 @@
-<h1>First Server</h1> 
+<section class="layout-container">
+  <div class="layout-basis">
+    <div class="layout">
+      <!--Functions-->
+      <h4 class="header-text">Functions</h4>
+      <p class="text">
+        A function is a block of reusable code that performs a specific task. They can also be grouped together in a sequence of the statements to aid each other performing an action.  Functions can accept inputs through `parameter or arguments` and process the input or return the processed input as a value.
+      </p>
+    </div>
+
+    <div class="layout center-layout">
+      <h4 class="header-text">Different kind of functions</h4>
+      <p class="text">
+        Named functions, are defined using the keyword `function` followed by the function name. They are explicitly named and makes them easier to understand and identify, as they are self-descriptive. Besides that, a named function can be defined before they are called, which allow you to use them anywhere within the scope where they are declared (hoisting). 
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/function.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <p class="text">
+        Function expressions are defined as part of an expression. Therefore you can assign a function to a variable. The function doesn’t have to have a name, making it anonymous or you can just name it. They are not hoisted as a named function, meaning they cannot be called before they are defined.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <p class="text">
+        Arrow functions was introduced with ES6. They are always anonymous and the syntax I shorter in comparison to function expressions, which make them much more simple but the lack of named functions can make the code more challenging to read and debug.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionarrow.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionarrowoneliner.png" alt="node-version">
+    </div>
+
+    <!--Callbacks-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Callbacks</h4>
+      <p class="text">
+        A callback is any reference to an executable code that is passed as an argument. As shown in the code the function `generciActionPerformer` takes in two arguments `name` and `genericAction`.
+        The ` name` is a string and the `genericAction` is the variable name for our function `callback` that is passed. The `generciActionPerformer` calls the `genericAction` and passes the `name` to it.  So it calls back to the function `callback` , that print out the value.        
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/callbackone.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/callbacktwo.png" alt="node-version">
+    </div>
+
+    <!--Package.Json -->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">What is package.Json file?</h4>
+      <p class="text">
+        As written earlier in the introduction, you can install multiple packages in your project. One way to keep track of which packages you have installed is the package. Json file. One of the primary functions of the package. Json file is to keep track of the projects dependencies by containing a list of the required dependencies and their versions to run the program. It also stores the metadata about the project such as the name, version, author, GitHub repo etc.        
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/packagejson.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        You can create package. Json file by adding the file calling it `package.json` or you can use the commands npm init and fill out the metadata information or you can just write npm init-y in your terminal, this will setup the package. Json file immediately. This will set the fields to a default value, and you always change them later.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/packagejsoninit.png" alt="node-version">
+    </div>
+
+    <!--Express-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Express</h4>
+      <p class="text">
+        Express is a web framework for node.js and is designed for building web applications and API’s. It provides features for handling HTTP request, routing, middleware integration, which boost development by making it more scalable and efficient in less lines of code.     
+      </p>
+    </div>
+
+    <div class="layout  center-layout">
+      <h4 class="header-text">Install express</h4>
+      <p class="text">
+        If already have a package.Json file setup, navigate to the file. If you don’t it, then follow the above steps on how to add a package. Json file to your project.
+        In the package.Json file you can either add the dependency manually or inyour terminal write `npm install express` and you will see the express dependency appear. You can either go with a specific version like “4.17.1” or add `^`, which allows npm to install compatible updates when running `npm install` or `npm update`
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expressinstall.png" alt="node-version">
+    </div>
+
+    <!--Setup Express Server-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Setup express server (not finished)</h4>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quidem cupiditate magnam expedita totam amet! Tenetur repellat suscipit doloremque, deleniti dolorem libero facere, velit animi maxime in minima? Fugiat voluptatem corrupti alias ipsam iste expedita, perspiciatis nam numquam provident dolorem. Voluptatum optio dicta qui quam! Totam, sapiente. Distinctio id laudantium ipsam, ab non dolore. Hic ullam ab incidunt veniam unde!
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetup.png" alt="node-version">
+    </div>
+
+    <!--Express how it works-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Express how it works (not finished)</h4>
+      <p class="text">
+        A node module is a reusable block of code that encapsulates functionality, so the contain functions, objects and other assets that can be imported and used in other Node.js projects.
+        At its core a node module can be as simple as JavaScript file that one of more functions that perform a task(S). The function(s) in the JavaScript file can be exported and used by another JavaScript file, such as app.js.
+      </p>
+      <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/first_server/modulecustom.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        app.js can import your custom module by using the keyword `require` and point its path. Now app.js can all on the method that relies inside of the import module.
+      </p>
+      <div class="layout center-layout">
+        <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/first_server/moduleimport.png" alt="node-version">
+      </div>
+    </div>
+
+    <div class="layout center-layout">
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/first_server/moduleresult.png" alt="node-version">
+    </div>
+
+    <!--Node_modules-->
+    <div class="layout margin-top50 center-layout">
+      <h4 class="header-text">Node_modules (not finished)</h4>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adipisci repudiandae facilis dignissimos deleniti, unde aut iusto sapiente aspernatur vel voluptatibus, officiis explicabo quisquam rem velit odio praesentium at porro eius obcaecati! Consectetur molestias alias commodi quaerat quod sit maiores perferendis laborum consequuntur vitae nulla dolore perspiciatis ipsa minus atque, eius tempore facilis illum? A provident doloribus error! Consequatur, commodi.
+      </p>
+      <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/first_server/nodemodules.png" alt="node-version">
+    </div>
+
+  </div>
+</section>
