@@ -77,11 +77,32 @@
 
     <!--Setup Express Server-->
     <div class="layout margin-top50 center-layout">
-      <h4 class="header-text">Setup express server (not finished)</h4>
+      <h4 class="header-text">Setup express server & test get-endpoint</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quidem cupiditate magnam expedita totam amet! Tenetur repellat suscipit doloremque, deleniti dolorem libero facere, velit animi maxime in minima? Fugiat voluptatem corrupti alias ipsam iste expedita, perspiciatis nam numquam provident dolorem. Voluptatum optio dicta qui quam! Totam, sapiente. Distinctio id laudantium ipsam, ab non dolore. Hic ullam ab incidunt veniam unde!
+        When express have been installed into you project. We will first with setting up the import needed for the express and make an endpoint by following the steps below.
+      </p>
+      <ul class="list">
+        <li>Import express using the commonJs require method.</li>
+        <li>Create an instance of express. 'const app = express()'.</li>
+        <li>Define an endpoint. Your app instance have the method get(), that takes in two arguments, the path "/" and callback function '(req, res) => {}'. The req (request) are for incoming http requests and res (response) for outoging.</li>
+        <li>'res' has a method '.send' that allows us to send back our response when the endpoint is being called.</li>
+        <li>We define a port, 'const port = 8181;',to reach the server and make implement it into your server by using the app instance and use the '.listen' method.</li>
+      </ul>
+
+      <p class="text">
+        When you have done this you can go to your web browser or use web an api software like postman to call and test the get-endpoint by writing the url: localhost:8181/.
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetup.png" alt="node-version">
+
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupget.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout margin-top20">
+      <p class="text">
+        We can also make another get-endpoint that accepts a parameter. In this case its name and when we use this route '/welcome/:name', express will extract the value. 'req.params.name' will retrieve the value passed in the url and we will send it back as json welcome message.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupgetparam.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupgetparamjson.png" alt="node-version">
     </div>
 
     <!--Express how it works-->
@@ -109,9 +130,14 @@
 
     <!--Node_modules-->
     <div class="layout margin-top50 center-layout">
-      <h4 class="header-text">Node_modules (not finished)</h4>
+      <h4 class="header-text">Node_Modules</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem adipisci repudiandae facilis dignissimos deleniti, unde aut iusto sapiente aspernatur vel voluptatibus, officiis explicabo quisquam rem velit odio praesentium at porro eius obcaecati! Consectetur molestias alias commodi quaerat quod sit maiores perferendis laborum consequuntur vitae nulla dolore perspiciatis ipsa minus atque, eius tempore facilis illum? A provident doloribus error! Consequatur, commodi.
+        When you install packages to your Node.js project, using the 'npm install package-name', the packages will be downloaded and stored in the node_modules folder.
+
+        The folder contains the external code of libraries, modules and also their dependencies, that your project relies on. As you can see in the picture below, when we installed express the package has its own subfolder with its documentaion, code, configurations etc.
+      </p>
+      <p class="text">
+        The benefit of the node_modules folder is that it allow each project to have its own set of depencies, that is isolated from other projects to avoid conflicts. When you share your project- and package.json file with others, they are not dependend on having the node_modules folder. This is because the package.json file already have the package dependency, you just need to write 'npm install' in your terminal and the node_modules folder will be recreated.
       </p>
       <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/first_server/nodemodules.png" alt="node-version">
     </div>

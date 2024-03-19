@@ -230,6 +230,13 @@ footer p {
   flex-direction: column;
 }
 
+.image-size400 {
+  width: 400px;
+  margin: 25px;
+  border-radius: 10px;
+  border: solid 1px #d3d3d3;
+}
+
 .image-size500 {
   width: 500px;
   margin: 25px;
@@ -239,6 +246,13 @@ footer p {
 
 .image-size600 {
   width: 600px;
+  margin: 25px;
+  border-radius: 10px;
+  border: solid 1px #d3d3d3;
+}
+
+.image-size700 {
+  width: 700px;
   margin: 25px;
   border-radius: 10px;
   border: solid 1px #d3d3d3;

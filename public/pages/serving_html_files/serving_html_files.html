@@ -1,18 +1,25 @@
 <section class="layout-container">
   <div class="layout-basis">
     <!--Nodemon-->
-    <div class="layout center-layout">
+    <div class="layout">
       <h4 class="header-text">Nodemon</h4>
       <p class="text">
         Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/function.png" alt="node-version">
     </div>
 
-    <div class="layout">
+    <div class="layout center-layout">
       <p class="text">
         Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
       </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
+      <p class="text">
+        With nodemon you only need to type 'nodemon ./app.js' in your terminal and the nodemon will listen to changes made in your javascript files and restart the server.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemon.png" alt="node-version">
     </div>
 
     <div class="layout margin-top20 center-layout">
@@ -20,7 +27,13 @@
       <p class="text">
         You can either install it locally or globally. The key difference is that locally you Nodemon are installed within the project’s directory and globally which allows for specific have customization. Each project can have its own version or can have specific needs of listening to specific files for changes. A global installation will make Nodemon accessible from any directory and you don’t have to install it every time you start a new project. But then the customization option is not flexible anymore.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodeinstall.png" alt="node-version">
+      <p class="text">
+        The 'npm install -g nodemon' will it install globally on your system, hence the '-g' and the will become available as a command-line tool for all directories.
+      </p>
+      <p class="text">
+        The 'npm install nodemon --save-dev' will it install locally into your project. The '--save-dev' stands for 'save as development dependency' and when used locally in a projekt, npm adds it to 'devDependencies' in your package.json.
+      </p>
     </div>
 
     <!--Loops & Loop methods-->
@@ -34,22 +47,22 @@
 
     <div class="layout center-layout">
       <h4 class="header-text size18">For loop:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/forloop.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">While loop:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/whileloop.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
-      <h4 class="header-text size18">Enhanced for loop:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <h4 class="header-text size18">Do..While loop:</h4>
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/dowhileloop.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">For... of loop:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/forofloop.png" alt="node-version">
     </div>
 
     <div class="layout margin-top50">
@@ -59,23 +72,28 @@
     </div>
 
     <div class="layout center-layout">
+      <h4 class="header-text size18">ForEach:</h4>
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/foreach.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout">
       <h4 class="header-text size18">Map:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/map.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Filter:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/filter.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Reduce:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/servering_html/reduce.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Method chaining:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/methodchain.png" alt="node-version">
     </div>
 
 
@@ -83,41 +101,39 @@
     <div class="layout margin-top50">
       <h4 class="header-text">Avoiding side effects</h4>
       <p class="text">
-        When we use loop methods, we also avoid potential side effects that a function can make and to adhere to function programming principles we need to make sure that our functions is “pure” and do note produces any side effect. As shown the function doubleNumbers modifies the existing array and we don’t want that, so we use a map() instead, to get a new array with the changes and our original array is still intact. This makes the function more predictable, easier to understand and you avoid introducing unintended changes into your original data. 
+        When want to alter the values in an array using a normal loop it will cause what is called side effects. This is not ideal if we want to preserve the original data for later or if other functions in our program is dependend on the data being consistent. Therefore using a method loop is prefered because it will not alter the original array but return a new array with the altered values.
+      </p>
+      <p class="text">
+        As you can see in the images below the first one is causing a side effect altering the values in array. The first print statement 'start' is to show the array before the loop and the 'finish' is after.
+      </p>
+      <p class="text">
+        In the second image we do the same but because we are using a loop method it returns a new array. When we print it out we can see the new values but the original array remain intact.
       </p>
     </div>
 
     <div class="layout center-layout">
-      <h4 class="header-text size18">Function causing side effect</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <h4 class="header-text size18">Causing side effect</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/causesideeffect.png" alt="node-version">
     </div>
 
     <div class="layout margin-top20 center-layout">
-      <h4 class="header-text size18">Functional approach to avoid side effect</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <h4 class="header-text size18">Avoid side effect</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/avoidsideeffect.png" alt="node-version">
     </div>
-
-    <div class="layout center-layout">
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
-    </div>
-
 
     <!--Anatomy of URL-->
     <div class="layout margin-top50 center-layout">
-      <h4 class="header-text">Anatomy of URL (not finished)</h4>
-      <p class="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quisquam, quos totam harum deleniti reiciendis minus ut quae cumque ea reprehenderit quibusdam ipsum. At est sint enim adipisci tempora! Eos dignissimos beatae quia, libero voluptas sequi? Ad, quibusdam incidunt impedit nihil reiciendis doloremque sit eum voluptatem minima quis numquam alias aspernatur enim iusto nam ipsum, temporibus est adipisci expedita saepe.
-      </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <h4 class="header-text">Anatomy of URL</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/urlanatomy.png" alt="node-version">
     </div>
 
     <div class="layout">
       <ul class="list">
-        <li>Protocol: Indicates the communication protocol used to access the resource on the server. Common protocols include HTTP, HTTPS, FTP, and others. In the example "https://www.google.com/search?q=test&oq=test", the protocol is "https".</li>
+        <li>Protocol: Indicates the communication protocol used to access the resource on the server. Common protocols include HTTP, HTTPS, FTP etc.</li>
         <li>Domain: Specifies the domain name of the server hosting the resource. It typically consists of a sub-domain and a top-level domain. In the example, "www" is the sub-domain, and "google.com" is the top-level domain.</li>
         <li>Path: Identifies the specific resource or endpoint on the server. It comes after the domain and may include additional sub-paths separated by slashes. In the example, "/search" is the path.</li>
-        <li>Query String: Contains additional data passed to the server as key-value pairs. It starts with a question mark (?) and consists of multiple key-value pairs separated by ampersands (&). In the example, "?q=test&oq=test" is the query string.</li>
-        <li>Query Parameters: These are the individual key-value pairs within the query string. Each parameter consists of a key (e.g., "q") and a value (e.g., "test"). In the example, "q=test" and "oq=test" are query parameters.</li>
+        <li>Query String: Contains additional data passed to the server as key-value pairs. It starts with a question mark '?' and consists of multiple key-value pairs separated by ampersands '&'.</li>
+        <li>Query Parameters: These are the individual key-value pairs within the query string. Each parameter consists of a key 'q' and a value 'test'.</li>
       </ul>
     </div>
 
@@ -127,8 +143,28 @@
       <p class="text">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quisquam, quos totam harum deleniti reiciendis minus ut quae cumque ea reprehenderit quibusdam ipsum. At est sint enim adipisci tempora! Eos dignissimos beatae quia, libero voluptas sequi? Ad, quibusdam incidunt impedit nihil reiciendis doloremque sit eum voluptatem minima quis numquam alias aspernatur enim iusto nam ipsum, temporibus est adipisci expedita saepe.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/expresspost.png" alt="node-version">
     </div>
 
+    <div class="layout center-layout margin-top20">
+      <h4 class="header-text size18">Postman:</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/postmanpost.png" alt="node-version">
+    </div>
+
+
+    <div class="layout center-layout margin-top20">
+      <h4 class="header-text size18">Middleware express.json():</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparser.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout margin-top20">
+      <h4 class="header-text size18">With express.json():</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparserpost.png" alt="node-version">
+    </div>
+
+    <div class="layout center-layout margin-top20">
+      <h4 class="header-text size18">Without express.json():</h4>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/nobodyparser.png" alt="node-version">
+    </div>
   </div>
 </section>
