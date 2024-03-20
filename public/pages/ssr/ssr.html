@@ -15,39 +15,52 @@
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/ssr/redirection.png" alt="node-version">
     </div>
 
-    <div class="layout margin-top20">
-      <h4 class="header-text size18">SRR vs. CSR redirection</h4>
-      <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
-      </p>
-    </div>
-
-    <!--Server-side vs. client-side rendering.-->
+      <!--Server-side vs. client-side rendering.-->
     <div class="layout margin-top50">
-      <h4 class="header-text">Server-side vs. client-side rendering</h4>
+      <h4 class="header-text">Server-side rendering vs. Client-side rendering</h4>
+      <h4 class="header-text size18">SSR</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        In server-side rendering, the HTML content is generated on the server and delivered to the user's browser as whole HTML document. This means that when the user loads the webpage, they recieve a fully rendered HTML directly from the server. 
       </p>
+
+      <h4 class="header-text size18">CSR</h4>
+      <p class="text">
+        On the other hand, in client-side rendering, the HTML content recieved from the server is being rendering and content generation happens on the client side, using JavaScript or libraries. After the initial HTML has been loaded, the client-side code will use JavaScript to fetch data from an API and dynamically update the Document Object Model (DOM) to render content
+      </p>
+
     </div>
 
-    <div class="layout center-layout">
+    <div class="layout">
+      <h4 class="header-text size18">Server-side</h4>
+      <ul class="list">
+        <li>SSR typically results in faster load times bacause the server send prerendered HTML content to the browser and it can be displayed immediatly. But SSR can have longer time to interactive making the user wait because additional JavaScript resourses needs to load.</li>
+        <li>SSR reduces client-side processing and memory usage as the server performs rendering and sends fully formed HTML content to the client. But SSR can increase the server load, especially if an applicaition have a large number of users at the same time. Because the server needs to generate HTML content for each request.</li>
+        <li>SSR is preferred for SEO as search engine crawlers can easily parse and index pre-rendered HTML content.</li>
+        <li>SSR can help avoid CORS issues by centralizing data fetching and rendering on the server, reducing the need for cross-origin requests.</li>
+        <li>SRR also helps in those instances where browser / clients have turned of JavaScript.</li>
+      </ul>
+    </div>
+
+    <div class="layout">
+      <h4 class="header-text size18">Client-side</h4>
+      <ul class="list">
+        <li>CSR may have faster load times after the initial page has been loaded bacause if any other date is needed to fetched and updated to the DOM, it doesn't have make a full page reload. But CSR can often lead to slower load times because there can be JavaScript resourses that takes longer to download and execute before rendering the page.</li>
+        <li>CSR takes away the rendering tasks from server to the client, reducing server load. But CSR can result in higher client-side processing and memory usage. Especially if it is complex/large application.</li>
+      </ul>
+    </div>
+
+    <!--Reading files-->
+    <div class="layout center-layout margin-top50">
+      <h4 class="header-text">Reading files</h4>
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        dasd
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
     </div>
 
-    <!--Reading files-->
-    <div class="layout">
-      <h4 class="header-text">Reading files</h4>
-      <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
-      </p>
-    </div>
-
     <div class="layout center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        asdasd
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
     </div>
