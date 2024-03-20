@@ -53,16 +53,22 @@
     <div class="layout center-layout margin-top50">
       <h4 class="header-text">Reading files</h4>
       <p class="text">
-        dasd
+        All the webpage in this portfolio is generated using server-side rendering. Where the header and footer parts for of html is made into small components and assembled with the main content in the middle. Just like a burger. For being able to do this, we use the function 'fs.readFileSync()' in Node.js that is part of its file system module. When using this function Node.ks will read the file from the filesystem and block the main thread until the entire file is read. Meaning that while the HTML file is being read all other execution of code will pause, untill it is finished. This allows the the server to render the HTML content before sending it to the client.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+
+      <p class="text">
+        Seen in the picture below, the 'fs' is imported and it allows us to use it '.readFileSync()' function. Here we parse the path to the HTML file and the 'toString()' turns the filebuffer into a string using UTF-8 endcoding. We could also have specified it in the like this '.readFileSync(path, 'utf8')'.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/readingfile.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
-      <p class="text">
-        asdasd
-      </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <ul class="list">
+        <li>So as seen in the picture the 'readPage' function reads the page, turns it into a string and returns it.</li>
+        <li>In 'footer' variable we read the file too but it's not returned because it static and never changes.</li>
+        <li>Inside the 'renderPage' function the page that as read an return is being passed as 'page' and for the 'header' variable the same is done as the 'footer'.</li>
+        <li>Lastly the function concatenate the files to one big string 'header + page + footer' and it is ready to be sent to the client.</li>
+      </ul>
     </div>
 
     <!--Nodemon-->
