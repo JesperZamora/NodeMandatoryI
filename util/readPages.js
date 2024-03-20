@@ -36,7 +36,7 @@ export const ssrPage = renderPage(ssr, {
 });
 
 const router = readPage("./public/pages/routers/routers.html");
-export const routerPage = renderPage(ssr, {
+export const routerPage = renderPage(router, {
   tabTitle: "Router"
 });
 

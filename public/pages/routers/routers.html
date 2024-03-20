@@ -1,37 +1,52 @@
 <section class="layout-container">
   <div class="layout-basis">
     <!--Define and run scripts-->
-    <div class="layout">
+    <div class="layout center-layout">
       <h4 class="header-text">Define and run scripts</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        A script refers to a file containg code that can be executed and in Node.js it would be a JavaScript file contaning code that can be executed using the Node.js runtime. Scripts can be used for many things such as running test, builds, deployment, running web server, task automation etc. 
       </p>
+      <p class="text">
+        In our package.json file we can define scripts using the 'scripts' field as a key-value pair. The key is the script name and the value is the command to run the script. To run a script in Node.js, in the terminal we will write 'npm run keyname'. Node.js will now execute the corresponding command specified and the script in the package.json file.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/routing/definescript.png" alt="node-version">
     </div>
 
     <div class="layout center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        The picture above shows the package.json file and in the 'scripts' field I have defined the 'key' to be 'myscript' and the value to 'nodemon.cmd ./app.js'. Now when I type 'npm run myscript' it will execute the nodemon and run app.js.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+
     </div>
 
     <!--Promises and async/await-->
-    <div class="layout">
+    <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Promises and async/await</h4>
       <p class="text">
         Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
       </p>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/newpromise.png" alt="node-version">
     </div>
 
-    <div class="layout center-layout">
+    <div class="layout margin-top50 center-layout">
       <p class="text">
         Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/newpromisereject.png" alt="node-version">
     </div>
 
+
+    <div class="layout margin-top50 center-layout">
+      <p class="text">
+        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+      </p>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/mypromise.png" alt="node-version">
+    </div>
+
+
+
     <!--Routers-->
-    <div class="layout">
+    <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Routers</h4>
       <p class="text">
         Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
