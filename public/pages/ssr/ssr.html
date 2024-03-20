@@ -46,18 +46,33 @@
     </div>
 
     <!--Nodemon-->
-    <div class="layout">
-      <h4 class="header-text">Serving static files</h4>
+    <div class="layout center-layout">
+      <h4 class="header-text">Nodemon extension</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        As an extension to the Nodemon chapter in <a href="/servingHtmlFiles">Serving Html</a> this Nodemon chapter will look a bit into the configuration. By default watches files with '.js, .mjs, .cjs, .json', which means only when there have been made changes to these files Nodemon will automatically restart. But when since we are working with server side rendering and html files, changes to these files won't be displayed automaticly for examaple when we have written new text. And in a our developent phase this is not optimal, because it either require us make a change in one of those default files being watched or close down Nodemon and start it again. Which kind of defeats the purpose of Nodemon when working fullstack. 
       </p>
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonstart.png" alt="node-version">
     </div>
 
-    <div class="layout center-layout">
+    <div class="layout margin-top20 center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        At the picture above you can se the default. But this we can change and there are two main ways of doing it. We can either go to our terminal and write 'nodemon --ext file extension', so we can tell it watch only '.js and html' like 'nodemon --ext js,html'.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonextone.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <p class="text">
+        The other way is to make a configuration file. Nodemon supports locally an globally configuration files and you can even place it the configuration your package.json if you want to keep all in one place. But for this we will make 'nodemon.json' file and added to our project. As shown in the picture below we add a 'nodemon.json' file and in that file tell it watch the "ext": "js, json, html"<div class=""></div>
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonconfig.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <p class="text">
+        For more details about different configurations you can also visit Nodemons <a href="https://github.com/remy/nodemon#nodemon" target="_blank">Github</a> or you go to your terminal and write 'nodemon -h'. It will give you a list of options, commands and more. As you can see in the picture one of the first options is how to make Nodemon watch for extensions.
+      </p>
+      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonhelp.png" alt="node-version">
     </div>
   </div>
 </section>
