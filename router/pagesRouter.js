@@ -5,7 +5,8 @@ import {
   servingHtmlFilesPage, 
   timePage, 
   exportImportPage, 
-  ssrPage, 
+  ssrPage,
+  routerPage, 
   contactPage
 } from "../util/readPages.js";
 
@@ -48,7 +49,11 @@ router.get("/exportimport", (req, res) => {
 // SSR
 router.get("/ssr", (req, res) => {
   res.send(ssrPage);
-}); 
+});
+
+router.get("/router", (req, res) => {
+  res.send(routerPage);
+})
 
 // Contact
 router.get("/contact", (req, res) => {

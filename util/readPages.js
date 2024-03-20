@@ -35,6 +35,11 @@ export const ssrPage = renderPage(ssr, {
   tabTitle: "Server Side Rendering"
 });
 
+const router = readPage("./public/pages/routers/routers.html");
+export const routerPage = renderPage(ssr, {
+  tabTitle: "Router"
+});
+
 const contact = readPage("./public/pages/contact/contact.html", {
   tabTitle: "Contacts"
 });

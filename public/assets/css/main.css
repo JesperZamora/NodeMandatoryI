@@ -211,7 +211,7 @@ footer p {
 }
 
 .text {
-  line-height: 1.6rem;
+  line-height: 1.7rem;
   font-size: 16px;
   padding: 5px;
 }
@@ -271,4 +271,5 @@ footer p {
 
 a {
   cursor: pointer;
+  color: #000000;
 }
