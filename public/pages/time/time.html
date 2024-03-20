@@ -4,9 +4,10 @@
     <div class="layout center-layout">
       <h4 class="header-text">Time in JavaScript</h4>
       <p class="text">
-        There are several ways to work with dates in JavaScript and they all have different purposes and provides different functionalities. Some of the main ways are using new Date(), this a build in JavaScript Date object that represents the current data and time. It can also accept arguments to create a Date object for a specific data an time `new Data(1990-04-18)`. But if no arguments are given it will just return the current date.
+        There are several ways to work with dates in JavaScript and they all have different purposes and provides different functionalities. Some of the main ways are using new Date(), this a build in JavaScript Date object that represents the current data and time. It can also accept arguments to create a Date object for a specific data an time `new Data("1990-04-18")`. But if no arguments are given it will just return the current date. The 'new Data()' also has a lot of build in functions that can be called to get a more specified date, like getDate(), getDay() etc.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/function.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/time/newdate.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/time/newdatebuildin.png" alt="node-version">
     </div>
 
     <div class="layout margin-top20">
@@ -14,50 +15,76 @@
         The date and time is represented as an ISO 8601 formatted date and time string in  UTC (Coordinated Universal Time). How to read it:
       </p>
       <ul class="list">
-        <li>2024-02-23: This part represents the date in the format YYYY-MM-DD. In this case, it's February 23, 2024.</li>
+        <li>2024-03-20: This part represents the date in the format YYYY-MM-DD. In this case, it's March 20, 2024.</li>
         <li>T: The uppercase "T" is a separator that indicates the beginning of the time component.</li>
-        <li>08:22:51.979: This part represents the time in the format HH:mm:ss.SSS. In this case, it's 08 hours, 22 minutes, 51 seconds, and 979 milliseconds.</li>
+        <li>09:58:49.651: This part represents the time in the format HH:mm:ss.SSS. In this case, it's 09 hours, 58 minutes, 49 seconds, and 651 milliseconds.</li>
         <li>Z: The uppercase "Z" denotes that the time is in UTC (Coordinated Universal Time), also known as GMT (Greenwich Mean Time). The "Z" stands for "Zulu time," which is a term used in aviation and military contexts to refer to UTC time.</li>
       </ul>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
-        Another way is using Date.now(), the method returns a numeric value corresponding to the time in millieseconds since the Unix Epoch (January 1, 1970, UTC) .
+        Other ways of getting the date is using 'Date()' to get a more human readable date or 'Date.now()', the method returns a numeric value corresponding to the time in millieseconds since the Unix Epoch (January 1, 1970, UTC).
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/time/date.png" alt="node-version">
     </div>
 
     <!--Fetch-->
     <div class="layout margin-top50 center-layout">
-      <h4 class="header-text">Fetch (not finished)</h4>
+      <h4 class="header-text">Fetch</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci, quae beatae sequi temporibus itaque obcaecati architecto quaerat saepe id, debitis nobis aliquid, magni nemo cum commodi dolor libero natus!
+        Fetch is a feature provided by the browser enviroment. It is used to interact with servers making HTTP request and can used to make 'GET, POST, PUT DELETE' requests. In the picture below is an example of fetch being used. This is from a assignment project in our node course where this fetch requests quiz data from the server.
       </p>
+      <ul class="list">
+        <li>'fetch()' is being used to make a GET request to '/quiz/category'.</li>
+        <li>The fetch function returns a Promise that resolves to a response object. This represents the response of the request.</li>
+        <li> In the first '.then()' block we use the '.json()' method of the response object to parse the response body as JSON.</li>
+        <li>In the second '.then()' block we recieve the data passed as JSON.</li>
+        <li>No we can manipulate the data recieved.</li>
+      </ul>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/fetch.png" alt="node-version">
     </div>
 
-    <!--Time to desploy-->
+    <!--Time to desploy assignment-->
     <div class="layout margin-top50">
-      <h4 class="header-text">Time to deploy (not finished)</h4>
+      <h4 class="header-text">Time to Deploy assigntment</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci, quae beatae sequi temporibus itaque obcaecati architecto quaerat saepe id, debitis nobis aliquid, magni nemo cum commodi dolor libero natus!
+        This is assignment revolved around time and was given to us be as creative as possible. What I chose to do was to make a simple quiz where a user could choose a topic and with the use of Chat-GPT-4 questions revolving around chosen topic and time, the user would get x amount of questions. The user only had certain timeframe to answer as many questions a possible. Though only a small project it was fun because we got to play around with what we have learned about express.
       </p>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Express API</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci, quae beatae sequi temporibus itaque obcaecati architecto quaerat saepe id, debitis nobis aliquid, magni nemo cum commodi dolor libero natus!
+        The picture below is from my 'Time to Deploy' assigntment and you can find the code on my <a href="#">Github</a>. But a little walkthrough.
+        <ul class="list">
+          <li>After installing Express using the 'npm install express' command in the terminal, I import Express using the commonJs function 'require('express')'. This allows me use the features provided by Express and the imported module is a assigned to the varible 'express'.</li>
+          <li>After the import, I use the the 'express()' function to create a new Express application instance. The 'app' object represents the Express appliication and is used to configure routes, middleware etc.</li>
+          <li>By calling 'express()' and assign it the 'app' variable, im initializing my express application and make it ready to handle incoming HTTP requests. </li>
+          <li>I choose a port number, 'PORT = 8080', which my Express server will listen for incoming HTTP requests on. </li>
+          <li>I define two routes using 'app.get()'. The first route handles GET requests to the root path "/". Im using '__dirname' to provide the absolute path to the file that needs be served to the user. </li>
+          <li>The second route handles the GET requests and the incoming category from the user and then it invokes an asynchronous function 'main' that generate the quiz data.</li>
+          <li>At the bottom I give the 'PORT' variable to start the express server and with the specified port number.</li>
+        </ul>
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/timetodeployapi.png" alt="node-version">
     </div>
 
-    <div class="layout margin-top20 center-layout">
+    <div class="layout margin-top50 center-layout">
       <h4 class="header-text size18">OpenAI Chat-GPT-4</h4>
       <p class="text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci, quae beatae sequi temporibus itaque obcaecati architecto quaerat saepe id, debitis nobis aliquid, magni nemo cum commodi dolor libero natus!
       </p>
+      <ul class="list">
+        <li>After installing OpenAi using the 'npm install --save openai' in the terminal, I import the OpenAI SDK, just like with express.</li>
+        <li>I configure the OpenAi with my API Key and using it to create an instance of the Open AI client ('openai').</li>
+        <li>The variable 'systemContent' provides OpenAI with message describing the system requirements for generating quiz questions and how to format it.</li>
+        <li>The 'content' array holds object representing the system requirements and the user subject input being pushed to the array.</li>
+        <li>'Main' function is the asynchronous function that is responsible for generating the quiz question based on the user's chosen topic. </li>
+        <li>Using the 'openai.chat.completion.create()' methode it generates a chat completions. In the 'create()' constructor we pass an object holding the 'content' array and which GPT-Model to use.</li>
+        <li>From the 'completion' object I extract the completion response that contains the generated quiz quesitons and returns it.</li>
+        <li>At the bottom the function is exported to so the 'App.js' can import it and make use of the function.</li>
+      </ul>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/timetodeployopenai.png" alt="node-version">
     </div>
 
@@ -65,16 +92,14 @@
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Deployment with Vercel</h4>
       <p class="text">
-        Though not a learning goal of this course we introduced and encourage to deploy our time application. We were introduced to <a href="https://vercel.com/ " target="_blank">Vercel</a> which is a cloud platform for deploying and hosting web projects. Their product provides an easy way to deploy a front-end application, static sites, serverless functions and has an automatic deployment when it’s connected to your Github repository. 
+        Though not a learning goal of this course we introduced and encourage to deploy our time application. We were introduced to <a href="https://vercel.com/ " target="_blank">Vercel</a> which is a cloud platform for deploying and hosting web projects. Their product provides an easy way to deploy a front-end application, static sites, serverless functions and has an automatic deployment when it’s connected to your Github repository.
+      </p>
+      <p class="text">
+        Before you can just launch your application you need add 'vercel.json' configuration file to your project. Because we have to tell Vercel what files to build and how to route them using the 'vercel.json'. Clik the link to get a detailed guide: <a href="https://shadowsmith.com/thoughts/how-to-deploy-an-express-api-to-vercel" target="_blank">Vercel configuration file</a> and to see my project deployed click <a href="https://ai-quiz-time-to-deploy-git-main-jesper-wolffs-projects.vercel.app/">here</a>. If the quiz doesn't work it's proberly because my money on OpanAI has been used up 😒😁.
       </p>
       <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/time/timetodeploywebsite.png" alt="node-version">
-    </div>
-
-    <div class="layout margin-top20 center-layout">
-      <p class="text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus nemo animi molestias minima, voluptates tempore consequatur debitis, impedit aliquid perferendis quae porro dignissimos corporis explicabo cum iusto at fugit aliquam quam exercitationem saepe ipsum! Ipsum suscipit ullam repellendus labore enim.
-      </p>
       <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/time/timetodeployverceldash.png" alt="node-version">
     </div>
+
   </div>
 </section>

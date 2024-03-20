@@ -139,31 +139,41 @@
 
     <!--Express post request & body parsing-->
     <div class="layout margin-top50 center-layout">
-      <h4 class="header-text">Express post request & body parsing (not finished)</h4>
+      <h4 class="header-text">Express post request & body parsing</h4>
       <p class="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quisquam, quos totam harum deleniti reiciendis minus ut quae cumque ea reprehenderit quibusdam ipsum. At est sint enim adipisci tempora! Eos dignissimos beatae quia, libero voluptas sequi? Ad, quibusdam incidunt impedit nihil reiciendis doloremque sit eum voluptatem minima quis numquam alias aspernatur enim iusto nam ipsum, temporibus est adipisci expedita saepe.
+        The picture below shows a post request in express. Instead of getting values as params, we here instead get a JSON paylod sent in the request body. To make the payload available to us, we need to parse it because express does not parse the request body by default. So we use the middleware 'express.json()'. If we do not use this and we recieve a 'POST or PUT' request, we won't be able to access the JSON data and the attempt will result in 'undefined.'
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/expresspost.png" alt="node-version">
     </div>
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">Postman:</h4>
+      <p class="text">
+        Here we can see the use of postman sending a post request to our server and we recieve confirmation back as recieved by sending back the JSON data.
+      </p>
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/postmanpost.png" alt="node-version">
     </div>
 
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">Middleware express.json():</h4>
+      <p class="text">
+        Here is how to make use of the middleware express.json() by a applying it to 'app.use()' contstructor.
+      </p>
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparser.png" alt="node-version">
     </div>
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">With express.json():</h4>
+      <p class="text">
+        Her we can see at the we have accessed the data in the route handlers 'req.body' and we are able to print it out to the terminal.
+      </p>
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparserpost.png" alt="node-version">
     </div>
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">Without express.json():</h4>
+      <p class="text">Without the middleware to parse the JSON payload the result is 'undefined or null to object'.</p>
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/nobodyparser.png" alt="node-version">
     </div>
   </div>
