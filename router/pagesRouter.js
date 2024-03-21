@@ -7,7 +7,6 @@ import {
   exportImportPage, 
   ssrPage,
   routerPage, 
-  contactPage
 } from "../util/readPages.js";
 
 import { Router } from "express"
@@ -50,13 +49,9 @@ router.get("/ssr", (req, res) => {
   res.send(ssrPage);
 });
 
+// Router
 router.get("/router", (req, res) => {
   res.send(routerPage);
 })
-
-// Contact
-router.get("/contact", (req, res) => {
-  res.send(contactPage);
-}); 
 
 export default router;

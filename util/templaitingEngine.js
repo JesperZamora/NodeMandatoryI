@@ -9,7 +9,7 @@ const footer = fs.readFileSync("./public/components/footer/footer.html").toStrin
 export function renderPage(page, config={}) {
   const header = fs.readFileSync("./public/components/header/header.html").toString();
   return header.replace("$tabTitle$", config.tabTitle || "Portfolio")
-  .replace("", config.CSSLinks || "") 
+  .replace("$CSS_link$", config.CSS_link || "") 
   + page
   + footer;
 }

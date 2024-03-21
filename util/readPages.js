@@ -39,8 +39,3 @@ const router = readPage("./public/pages/routers/routers.html");
 export const routerPage = renderPage(router, {
   tabTitle: "Router"
 });
-
-const contact = readPage("./public/pages/contact/contact.html", {
-  tabTitle: "Contacts"
-});
-export const contactPage = renderPage(contact);
