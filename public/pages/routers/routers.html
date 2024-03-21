@@ -23,56 +23,73 @@
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Promises and async/await</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        In JavaScript callbacks were the earliest approach to handling asynchronous operations, by passing a function as an argument to another function that then gets executed when the asynchronous operation was completed.
+        Eventhough callbacks solved the challenge of executing asynchronous operations, it could often lead to whats called callback hell or pyramid of doom. Making the code defficult to read and maintain.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/newpromise.png" alt="node-version">
-    </div>
-
-    <div class="layout margin-top50 center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        Then came the promise as a solution to the callback hell.The promise provides a more structered and readable way of handling asynchronous operations. A 'new Promise()' takes in a function with two parameters 'resolve' and 'reject', and in the async operation we can define when something is good or bad and return it.
       </p>
+
+      <p class="text">
+        After the promise came the Async/Await that builds on top of Promises. It has more morden syntax that simplifies asynchronous operation even further because it allows us to write asynchronous code in a synchronous manner. Which makes it simpler to look at and more maintainable. We can write an 'async' function and use the keyword 'await' to pause the execution untill a Promise has return something.
+      </p>
+
+      <p class="text">
+        In the below picture a new promise is created. It takes in an arrow function with two parameters, 'resolved' and 'reject'. The 'setTimeout' function represents the delay of fetching data from an external source like an API. Inside there is placed a try-catch block to demonstrate that if everything went well it will return 'resolved' and if not it will return 'reject'. To demonstrate an error we through a 'new Error()'.
+      </p>
+      <img class="image-size500 margin-top50 image-alignmid" src="/assets/images/routing/newpromise.png" alt="node-version">
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/newpromisereject.png" alt="node-version">
     </div>
 
-
-    <div class="layout margin-top50 center-layout">
+    <div class="layout margin-top20 center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        There are two parts to a Promise, the Promise creator and the reciever. The code below illustrates function returning a new Promise. The funcion takes in a parameter and again 'setTimeout' to simulate asynchronous operation with a delay of 3 seconds. This is our creator.
+      </p>
+      <p class="text">
+        The reciever is whoever calls the function. So we call the 'myPromise()'and passes the argument 'false'. After 3 seconds, the function 'myFunction' returns the Promise. When we called 'myFunction()' we attached a '.then()' block with a function '(result) => {}', so when it the promise is ready it will call that that function an return it through that. We also attached a '.catch()' block if anything wrong sould happen we can handle it.
+      </p>
+      <p class="text">
+        At the bottom you can see an 'async' function call the same 'myPromise()'. We use the 'await' to pause and wait for 'myPromise()' function to return the Promise. We recieve he promise and it's stored in the reponse variable and we use await again to gain access to the result.
       </p>
       <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/mypromise.png" alt="node-version">
     </div>
-
-
 
     <!--Routers-->
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Routers</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        In Express, a Router is a middleware that allow us to group together our route handlers together and you can add a prefix to it. So when you mount it to the main Express app, when we use the 'app.use()' it would look like this 'app.use('/api', pageRouter)'. But this is not a must and somewhat not advised to us because it takes only takes a second to define it in the endpoint and in larger/complex applications it can become a nightmare with finding the error if all the prefixes are like '/api..'.
       </p>
     </div>
 
     <div class="layout center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        The following pictures will show how we went from having all our routers in the main app.js file and moving it to a seperate route file. As seen in the picture below the routes are defined 'app.get("/",...)' etc. This was moved it its seperate file (pageRouter.js), with the imports from 'readPages.js'.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/routeappbefore.png" alt="node-version">
+    </div>
+
+    <div class="layout margin-top20 center-layout">
+      <p class="text">
+        In the 'pageRouter.js' file, we import the '{ Router }' from Express and create a Router instance called router. We use this instance to connect all our route handlers and export the route instance as default,'export default router'. In the 'app.js'file, we import the '{ pageRouter }' and mount it to the Express app, using 'app.use(pageRouter)'. This helps the code being modular, reuseable and easy to maintain.
+      </p>
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/pageRouter.png" alt="node-version">
+      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/routeappafter.png" alt="node-version">
     </div>
 
     <!--Clean code-->
-    <div class="layout">
+    <div class="layout margin-top50">
       <h4 class="header-text">Clean code</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        Clean code refers to code that is not only readable but also easy to understand and maintain. You could say that if the code is has simplicity and readability it implicit becomes maintainable for the future to come. Other developers will have an easier unstanding of the code and if they were to introduce new code to the codebase, it minimizes the chances for bugs during development. 
       </p>
-    </div>
-
-    <div class="layout center-layout">
       <p class="text">
-        Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
+        There are a few popular software tools when it comes to writing cleaner code and they can be downloaded right into the IDE as an extension. Prettier and EsLint are two popular tools to keep you code clean and consistent. But here are differences between them.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <ul class="list margin-top20">
+        <li><a href="https://prettier.io/" target="_blank">Prettier</a> focuses on code formatting to ensure consistent styling.</li>
+        <li><a href="https://eslint.org/" target="_blank">EsLint</a> focuses on code quality and best practices to catch errors and improve overall code maintainability</li>
+      </ul>
     </div>
   </div>
 </section>

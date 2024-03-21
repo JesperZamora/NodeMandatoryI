@@ -13,7 +13,6 @@ import {
 import { Router } from "express"
 const router = Router();
 
-
 //---------- HTML ----------//
 
 // Homepage
