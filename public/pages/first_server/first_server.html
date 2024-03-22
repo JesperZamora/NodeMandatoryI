@@ -13,22 +13,37 @@
       <p class="text">
         Named functions, are defined using the keyword `function` followed by the function name. They are explicitly named and makes them easier to understand and identify, as they are self-descriptive. Besides that, a named function can be defined before they are called, which allow you to use them anywhere within the scope where they are declared (hoisting). 
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/function.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max + 1 - min) + min);
+        };
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         Function expressions are defined as part of an expression. Therefore you can assign a function to a variable. The function doesn’t have to have a name, making it anonymous or you can just name it. They are not hoisted as a named function, meaning they cannot be called before they are defined.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionanonymous.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const getRandomIntAnonymousFunction = function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max + 1 - min) + min);
+        };
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         Arrow functions was introduced with ES6. They are always anonymous and the syntax I shorter in comparison to function expressions, which make them much more simple but the lack of named functions can make the code more challenging to read and debug.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionarrow.png" alt="node-version">
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/functionarrowoneliner.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const getRandomIntArrowFunction = (min, max) => {
+          return Math.floor(Math.random() * (max + 1 - min) + min);
+        };
+      </code></pre>
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const getRandomIntArrowFunctionOneLiner = 
+        (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
+      </code></pre>
     </div>
 
     <!--Callbacks-->
@@ -38,8 +53,24 @@
         A callback is any reference to an executable code that is passed as an argument. As shown in the code the function `generciActionPerformer` takes in two arguments `name` and `genericAction`.
         The ` name` is a string and the `genericAction` is the variable name for our function `callback` that is passed. The `generciActionPerformer` calls the `genericAction` and passes the `name` to it.  So it calls back to the function `callback` , that print out the value.        
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/callbackone.png" alt="node-version">
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/callbacktwo.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        function genericActionPerformer(name, genericAction) {
+          return genericAction(name);
+        }
+        
+        function callback(call) {
+          console.log(call);
+        }
+        
+        genericActionPerformer("Jesper", callback);
+      </code></pre>
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const running = (name) => `${name} is running`;
+
+        const action = genericActionPerformer("Alex", running);
+        
+        console.log(action);
+      </code></pre>
     </div>
 
     <!--Package.Json -->
@@ -48,7 +79,25 @@
       <p class="text">
         As written earlier in the introduction, you can install multiple packages in your project. One way to keep track of which packages you have installed is the package. Json file. One of the primary functions of the package. Json file is to keep track of the projects dependencies by containing a list of the required dependencies and their versions to run the program. It also stores the metadata about the project such as the name, version, author, GitHub repo etc.        
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/packagejson.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        {
+          "name": "nodemandatoryi",
+          "version": "1.0.0",
+          "description": "",
+          "main": "index.js",
+          "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+          },
+          "keywords": [],
+          "author": "",
+          "license": "ISC",
+          "type": "module",
+          "dependencies": {
+            "express": "^4.18.3",
+            "highlight.js": "^11.9.0"
+          }
+        }
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
@@ -62,17 +111,28 @@
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Express</h4>
       <p class="text">
-        Express is a web framework for node.js and is designed for building web applications and API’s. It provides features for handling HTTP request, routing, middleware integration, which boost development by making it more scalable and efficient in less lines of code.     
+        Express is a web framework for node.js and is designed for building web applications and APIs. It provides features for handling HTTP request, routing, middleware integration, which boost development by making it more scalable and efficient in less lines of code.     
       </p>
     </div>
 
     <div class="layout  center-layout">
       <h4 class="header-text">Install express</h4>
       <p class="text">
-        If already have a package.Json file setup, navigate to the file. If you don’t it, then follow the above steps on how to add a package. Json file to your project.
-        In the package.Json file you can either add the dependency manually or inyour terminal write `npm install express` and you will see the express dependency appear. You can either go with a specific version like “4.17.1” or add `^`, which allows npm to install compatible updates when running `npm install` or `npm update`
+        If already have a package.Json file setup, navigate to the file. If you don't have it, then follow the above steps on how to add a package. Json file to your project.
+        In the package.Json file you can either add the dependency manually or inyour terminal write `npm install express` and you will see the express dependency appear. You can either go with a specific version like “4.17.1” or add `^`, which allows npm to install compatible updates when running `npm install` or `npm update`.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expressinstall.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From the terminal
+        
+        PS C:\Users\jespe\Desktop\4.Semster\Node\nodeplayground> npm install express
+
+        changed 2 packages, and audited 66 packages in 736ms
+        
+        12 packages are looking for funding
+          run `npm fund` for details
+        
+        found 0 vulnerabilities
+      </code></pre>
     </div>
 
     <!--Setup Express Server-->
@@ -92,8 +152,23 @@
       <p class="text">
         When you have done this you can go to your web browser or use web an api software like postman to call and test the get-endpoint by writing the url: localhost:8181/.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetup.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const express = require('express');
 
+        const app = express();
+        
+        app.get("/", (req, res) => {
+          res.send({ data: "Success - your endpoint is working!" });
+        });
+        
+        const PORT = 8181;
+        app.listen(PORT, () => {
+          console.log("Server is running on", PORT);
+        });
+
+        // Server is running on 8181
+        // Output: { "data" : "Success - your endpoint is working!" }
+      </code></pre>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupget.png" alt="node-version">
     </div>
 
@@ -101,7 +176,16 @@
       <p class="text">
         We can also make another get-endpoint that accepts a parameter. In this case its name and when we use this route '/welcome/:name', express will extract the value. 'req.params.name' will retrieve the value passed in the url and we will send it back as json welcome message.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupgetparam.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        app.get("/welcome/:name", (req, res) => {
+          const inputName = req.params.name;
+          const message = `Welcome ${inputName}`;
+          res.send({ data: message});
+        });
+        
+        // Output: { "data" : "Welcome Jesper Wolff" }
+      </code></pre>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/first_server/expresssetupgetparamjson.png" alt="node-version">
     </div>
 

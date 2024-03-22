@@ -6,8 +6,20 @@
       <p class="text">
         There are several ways to work with dates in JavaScript and they all have different purposes and provides different functionalities. Some of the main ways are using new Date(), this a build in JavaScript Date object that represents the current data and time. It can also accept arguments to create a Date object for a specific data an time `new Data("1990-04-18")`. But if no arguments are given it will just return the current date. The 'new Data()' also has a lot of build in functions that can be called to get a more specified date, like getDate(), getDay() etc.
       </p>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/time/newdate.png" alt="node-version">
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/time/newdatebuildin.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const currentDate = new Date();
+        console.log(currentDate);
+        
+        // Output: 2024-03-22T21:04:58.353Z
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const specificDate = new Date("1994.04.18");
+        console.log(specificDate);
+        
+        // Output: 1994-04-17T22:00:00.000Z
+      </code></pre>
+  
     </div>
 
     <div class="layout margin-top20">
@@ -26,7 +38,17 @@
       <p class="text">
         Other ways of getting the date is using 'Date()' to get a more human readable date or 'Date.now()', the method returns a numeric value corresponding to the time in millieseconds since the Unix Epoch (January 1, 1970, UTC).
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/time/date.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        let currentDate = Date();
+        console.log(currentDate);
+        
+        currentDate = Date.now();
+        console.log("Unix Epoch:", currentDate);
+
+
+        // Output: Fri Mar 22 2024 21:59:07 GMT+0100 (Centraleuropæisk normaltid)
+        // Output: Unix Epoch: 1711141147962
+      </code></pre>
     </div>
 
     <!--Fetch-->
@@ -42,7 +64,24 @@
         <li>In the second '.then()' block we recieve the data passed as JSON.</li>
         <li>No we can manipulate the data recieved.</li>
       </ul>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/fetch.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // Fetching quiz data
+        
+        function fetchData(category) {
+          fetch(`/quiz/${category}`)
+          .then((response) => response.json())
+          .then((result) => {
+            quizArray = result.data;
+            beginButtonColor();
+            questionAmount = quizArray.length;
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+            alert("Loading Error... Choose a category and press Load Game again 😎")
+          });
+        }
+      </code></pre>
     </div>
 
     <!--Time to desploy assignment-->
@@ -67,14 +106,45 @@
           <li>At the bottom I give the 'PORT' variable to start the express server and with the specified port number.</li>
         </ul>
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/timetodeployapi.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const express = require('express');
+        const app = express();
+        const PORT = 8080;
+        
+        const { main } = require('./OpenAI_API');
+        
+        app.get("/", (req, res) => {
+          return res.sendFile(__dirname + "/public/quiz.html");
+        });
+        
+        app.get("/quiz/:subject", async (req, res) => {
+          try {
+            const quizSubject = req.params?.subject;
+        
+            const JsonStringQuiz = await main(quizSubject);
+        
+            const quizArray = JSON.parse(JsonStringQuiz);
+            
+            return res.status(200).send({ data: quizArray });
+        
+          } catch(error) {
+            return res.status(500).send("Internal Server Error");
+          }
+        }); 
+        
+        app.listen(PORT, (error) => {
+          if(error) {
+            console.error("Error Starting Server", error);
+            return;
+          }
+          console.log("Server is running on", PORT);
+        });
+      </code></pre>
     </div>
 
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text size18">OpenAI Chat-GPT-4</h4>
-      <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci, quae beatae sequi temporibus itaque obcaecati architecto quaerat saepe id, debitis nobis aliquid, magni nemo cum commodi dolor libero natus!
-      </p>
       <ul class="list">
         <li>After installing OpenAi using the 'npm install --save openai' in the terminal, I import the OpenAI SDK, just like with express.</li>
         <li>I configure the OpenAi with my API Key and using it to create an instance of the Open AI client ('openai').</li>
@@ -85,7 +155,41 @@
         <li>From the 'completion' object I extract the completion response that contains the generated quiz quesitons and returns it.</li>
         <li>At the bottom the function is exported to so the 'App.js' can import it and make use of the function.</li>
       </ul>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/time/timetodeployopenai.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const express = require('express');
+        const app = express();
+        const PORT = 8080;
+        
+        const { main } = require('./OpenAI_API');
+        
+        app.get("/", (req, res) => {
+          return res.sendFile(__dirname + "/public/quiz.html");
+        });
+        
+        app.get("/quiz/:subject", async (req, res) => {
+          try {
+            const quizSubject = req.params?.subject;
+        
+            const JsonStringQuiz = await main(quizSubject);
+        
+            const quizArray = JSON.parse(JsonStringQuiz);
+            
+            return res.status(200).send({ data: quizArray });
+        
+          } catch(error) {
+            return res.status(500).send("Internal Server Error");
+          }
+        }); 
+        
+        app.listen(PORT, (error) => {
+          if(error) {
+            console.error("Error Starting Server", error);
+            return;
+          }
+          console.log("Server is running on", PORT);
+        });
+      </code></pre>
     </div>
 
     <!--Deployment with Vercel-->

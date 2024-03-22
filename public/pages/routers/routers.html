@@ -9,12 +9,37 @@
       <p class="text">
         In our package.json file we can define scripts using the 'scripts' field as a key-value pair. The key is the script name and the value is the command to run the script. To run a script in Node.js, in the terminal we will write 'npm run keyname'. Node.js will now execute the corresponding command specified and the script in the package.json file.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/routing/definescript.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From package.json
+
+        {
+          "scripts": {
+            "myscript": "nodemon.cmd ./app.js"
+          }
+        }
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From terminal
+        
+        PS C:\Users\jespe\Desktop\4.Semster\Node\nodeplayground> npm run myscript
+
+        > nodeplayground@1.0.0 myscript
+        > nodemon.cmd ./app.js
+        
+        [nodemon] 3.1.0
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,mjs,cjs,json
+        [nodemon] starting `node ./app.js`
+        Server is running on 8181
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <p class="text">
-        The picture above shows the package.json file and in the 'scripts' field I have defined the 'key' to be 'myscript' and the value to 'nodemon.cmd ./app.js'. Now when I type 'npm run myscript' it will execute the nodemon and run app.js.
+        The snippet above shows the package.json file and in the 'scripts' field I have defined the 'key' to be 'myscript' and the value to 'nodemon.cmd ./app.js'. Now when I type 'npm run myscript' it will execute the nodemon and run app.js.
       </p>
 
     </div>
@@ -37,8 +62,43 @@
       <p class="text">
         In the below picture a new promise is created. It takes in an arrow function with two parameters, 'resolved' and 'reject'. The 'setTimeout' function represents the delay of fetching data from an external source like an API. Inside there is placed a try-catch block to demonstrate that if everything went well it will return 'resolved' and if not it will return 'reject'. To demonstrate an error we through a 'new Error()'.
       </p>
-      <img class="image-size500 margin-top50 image-alignmid" src="/assets/images/routing/newpromise.png" alt="node-version">
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/newpromisereject.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            try {
+              //throw new Error("some error");
+              resolve("Everything OK");
+            } catch(error) {
+              //console.log(error);
+              reject(error);
+            }
+          }, 2000);
+        
+        })
+        .then((succesMessage) => console.log("Resolved:",succesMessage))
+        .catch((errorMessage) => console.log("Reject:", errorMessage));
+
+        // Output: Resolved: Everything OK
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            try {
+              throw new Error("some error");
+              resolve("Everything OK");
+            } catch(error) {
+              //console.log(error);
+              reject(error);
+            }
+          }, 2000);
+        
+        })
+        .then((succesMessage) => console.log("Resolved:",succesMessage))
+        .catch((errorMessage) => console.log("Reject:", errorMessage));
+
+        // Output: Error: some error
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
@@ -51,7 +111,40 @@
       <p class="text">
         At the bottom you can see an 'async' function call the same 'myPromise()'. We use the 'await' to pause and wait for 'myPromise()' function to return the Promise. We recieve he promise and it's stored in the reponse variable and we use await again to gain access to the result.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/routing/mypromise.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        function myPromise(foo) {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => { // Simulating asynchronous
+              if (foo) {
+                resolve("Something Good");
+              } else {
+                reject("Something Bad");
+              }
+            }, 3000);
+          });
+        }
+        
+        myPromise(false)
+          .then((result) => {
+            console.log("myPromise Resolved:", result);
+          })
+          .catch((error) => {
+            console.log("myPromise Rejected:", error);
+          });
+        
+        
+        async function myAsyncAwaitFunction(foo) {
+          const response = await myPromise(foo);
+          const result = await response;
+          console.log("AsyncAwait:",result);
+        }
+        
+        myAsyncAwaitFunction(true);
+
+        // Output: myPromise Rejected: Something Bad
+        // Output: AsyncAwait: Something Good
+      </code></pre>
     </div>
 
     <!--Routers-->
@@ -66,15 +159,89 @@
       <p class="text">
         The following pictures will show how we went from having all our routers in the main app.js file and moving it to a seperate route file. As seen in the picture below the routes are defined 'app.get("/",...)' etc. This was moved it its seperate file (pageRouter.js), with the imports from 'readPages.js'.
       </p>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/routeappbefore.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import express from "express";
+        const app = express();
+        
+        app.use(express.static("public"));
+        
+        import { 
+          homepagePage, 
+          introdutionPage, 
+          firstServerPage, 
+          servingHtmlFilesPage, 
+          timePage, 
+          exportImportPage, 
+          ssrPage, 
+          contactPage
+        } from "./util/readPages.js";
+        
+        //---------- HTML ----------//
+        
+        // Homepage
+        app.get("/", (req, res) => {
+          res.send(homepagePage);
+        });
+        
+        // Introduction
+        app.get("/introduction", (req, res) => {
+          res.send(introdutionPage);
+        });
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         In the 'pageRouter.js' file, we import the '{ Router }' from Express and create a Router instance called router. We use this instance to connect all our route handlers and export the route instance as default,'export default router'. In the 'app.js'file, we import the '{ pageRouter }' and mount it to the Express app, using 'app.use(pageRouter)'. This helps the code being modular, reuseable and easy to maintain.
       </p>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/pageRouter.png" alt="node-version">
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/routing/routeappafter.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import { 
+          homepagePage, 
+          introdutionPage, 
+          firstServerPage, 
+          servingHtmlFilesPage, 
+          timePage, 
+          exportImportPage, 
+          ssrPage,
+          routerPage, 
+        } from "../util/readPages.js";
+        
+        import { Router } from "express"
+        const router = Router();
+        
+        //---------- HTML ----------//
+        
+        // Homepage
+        router.get("/", (req, res) => {
+          res.send(homepagePage);
+        });
+        
+        // Introduction
+        router.get("/introduction", (req, res) => {
+          res.send(introdutionPage);
+        });
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import express from "express";
+        const app = express();
+
+        import pagesRouter from "./router/pagesRouter.js"
+
+        app.use(express.static("public"));
+        app.use(pagesRouter);
+
+        const PORT = 8080;
+        app.listen(PORT, (error) => {
+          if(error) {
+            console.log("Internal Server Error", error);
+          } else {
+            console.log("Server is running on port:", PORT);
+          }
+        });
+      </code></pre>
     </div>
 
     <!--Clean code-->

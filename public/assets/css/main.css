@@ -265,3 +265,18 @@ a {
   cursor: pointer;
   color: #000000;
 }
+
+/*---------snippets----------*/
+
+.snippet-layout {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 14px;
+}
+
+.snippet-center {
+  align-self: center;
+}

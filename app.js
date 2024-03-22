@@ -85,7 +85,6 @@ app.get("/contact", (req, res) => {
 */
 
 const PORT = 8080;
-
 app.listen(PORT, (error) => {
   if(error) {
     console.log("Internal Server Error", error);

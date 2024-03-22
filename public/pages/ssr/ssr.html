@@ -12,7 +12,25 @@
       <p class="text">
         The other way is server-side redirection, where the server sends back a HTTP response instructing browser to redirect to a different URL. This could be by the user clicking on a link on webpage or typing in an URL in the address bar in the browser. Either way the server recieves the request and determines that it needs to redirect to another webpage, because the requested webpage maybe has been moved. The server returns a HTTP response with the URL to which the browser should be redirected to and when the browser recieves the response it will automatically make a new request for the URL recieved and the server will respond back with the content specified to that URL. The picture below shows how a redirection can be done in Express, where the old-webpage represents the page the user wants to visit, when making a request to that endpoint it redirects the reponse to the new-webpage.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/ssr/redirection.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import express from 'express';
+
+        const app = express();
+
+        app.get("/new-webpage", (req, res) => {
+          res.send({ data: "new-page" });
+        })
+
+        app.get("/old-webpage", (req, res) => {
+          res.redirect("/new-webpage"); 
+        });
+
+        const PORT = 8181;
+        app.listen(PORT, () => {
+          console.log("Server is running on", PORT);
+        })
+      </code></pre>
     </div>
 
       <!--Server-side vs. client-side rendering.-->
@@ -59,7 +77,24 @@
       <p class="text">
         Seen in the picture below, the 'fs' is imported and it allows us to use it '.readFileSync()' function. Here we parse the path to the HTML file and the 'toString()' turns the filebuffer into a string using UTF-8 endcoding. We could also have specified it in the like this '.readFileSync(path, 'utf8')'.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/readingfile.png" alt="node-version">
+      
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import fs from 'fs';
+
+        export function readPage(path) {
+          return fs.readFileSync(path).toString();
+        }
+        
+        const footer = fs.readFileSync("./public/components/footer/footer.html").toString();
+        
+        export function renderPage(page, config={}) {
+          const header = fs.readFileSync("./public/components/header/header.html").toString();
+          return header.replace("$tabTitle$", config.tabTitle || "Portfolio")
+          .replace("$CSS_link$", config.CSS_link || "") 
+          + page
+          + footer;
+        }
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
@@ -77,28 +112,86 @@
       <p class="text">
         As an extension to the Nodemon chapter in <a href="/servingHtmlFiles">Serving Html</a> this Nodemon chapter will look a bit into the configuration. By default watches files with '.js, .mjs, .cjs, .json', which means only when there have been made changes to these files Nodemon will automatically restart. But when since we are working with server side rendering and html files, changes to these files won't be displayed automaticly for examaple when we have written new text. And in a our developent phase this is not optimal, because it either require us make a change in one of those default files being watched or close down Nodemon and start it again. Which kind of defeats the purpose of Nodemon when working fullstack. 
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonstart.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        [nodemon] 3.1.0
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,mjs,cjs,json
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         At the picture above you can se the default. But this we can change and there are two main ways of doing it. We can either go to our terminal and write 'nodemon --ext file extension', so we can tell it watch only '.js and html' like 'nodemon --ext js,html'.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonextone.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        PS C:\Users\jespe\Desktop\4.Semster\Node\nodeplayground> nodemon --ext js,html
+        [nodemon] 3.1.0
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,html
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         The other way is to make a configuration file. Nodemon supports locally an globally configuration files and you can even place it the configuration your package.json if you want to keep all in one place. But for this we will make 'nodemon.json' file and added to our project. As shown in the picture below we add a 'nodemon.json' file and in that file tell it watch the "ext": "js, json, html"<div class=""></div>
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonconfig.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        {
+          "ext": "js, json, html"
+        }
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        PS C:\Users\jespe\Desktop\4.Semster\Node\NodeMandatoryI> nodemon .\app.js
+        [nodemon] 3.1.0
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,json,html
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <p class="text">
         For more details about different configurations you can also visit Nodemons <a href="https://github.com/remy/nodemon#nodemon" target="_blank">Github</a> or you go to your terminal and write 'nodemon -h'. It will give you a list of options, commands and more. As you can see in the picture one of the first options is how to make Nodemon watch for extensions.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/ssr/nodemonhelp.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        PS C:\Users\jespe\Desktop\4.Semster\Node\nodeplayground> nodemon -h
+        Usage: nodemon [options] [script.js] [args]
+      
+        Options:
+      
+        --config file ............ alternate nodemon.json config file to use
+        -e, --ext ................ extensions to look for, ie. js,pug,hbs.
+        -x, --exec app ........... execute script with "app", ie. -x "python -v".
+        -w, --watch path ......... watch directory "path" or files. use once for
+                                   each directory or file to watch.
+        -i, --ignore ............. ignore specific files or directories.
+        -V, --verbose ............ show detail on what is causing restarts.
+        -- <your args> ........... to tell nodemon stop slurping arguments.
+      
+        Note: if the script is omitted, nodemon will try to read "main" from
+        package.json and without a nodemon.json, nodemon will monitor .js, .mjs, .coffee,
+        .litcoffee, and .json by default.
+      
+        For advanced nodemon configuration use nodemon.json: nodemon --help config
+        See also the sample: https://github.com/remy/nodemon/wiki/Sample-nodemon.json
+      
+        Examples:
+      
+        $ nodemon server.js
+        $ nodemon -w ../foo server.js apparg1 apparg2
+        $ nodemon --exec python app.py
+        $ nodemon --exec "make build" -e "styl hbs"
+        $ nodemon app.js -- --config # pass config to app.js
+      
+        All options are documented under: nodemon --help options
+      </code></pre>
     </div>
   </div>
 </section>
