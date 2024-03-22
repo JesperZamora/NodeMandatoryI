@@ -15,26 +15,33 @@
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
     </div>
 
-    <!--CommonJs vs. ES6-->
+    <!--CommonJs vs. ESM-->
     <div class="layout margin-top50">
       <h4 class="header-text">CommonJs vs. ES6</h4>
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et est obcaecati blanditiis, aliquam sit eius unde accusantium cupiditate iure deserunt soluta. Commodi quae aperiam eligendi non voluptatem ipsam animi ut iure eos tenetur, quidem quibusdam necessitatibus sed sint exercitationem.
+        Both CommonJs and Ecma Script Modules, are module systems used for organizing and devide code into smaller easy reusable chunks of code. But there are some key differences between them.
+      </p>
+      <p class="text">
+        CommonJs works synchronous, which means when a module is imported all other code execution is blocked until the module is fully loaded. It uses the 'const foo = require("path");' method to import a module and for exporting it a single value 'module.exports = value' and for multiple values 'module.exports = {value1, value2}'.
       </p>
     </div>
 
     <div class="layout center-layout">
       <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, aliquid asperiores voluptate, perferendis excepturi necessitatibus amet doloribus maxime dicta sunt possimus odio nihil eos provident. Nihil magnam, nulla vitae porro vero eveniet natus pariatur quam assumenda harum odio doloribus impedit!
+        When it comes to ES modules the module system works loading asynchronous, which is the other way around, so the code execution doesn't stop. When the module has been fully loaded it will be imported into the file you are importing it too. ESM it uses the 'import { foo } from "path";' and for exporting you place the export key word in front of the function or variable you want to export, 'export function foo(){}'. If you want to export a single default value it would be 'export defualt value;'.
       </p>
       <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
     </div>
+
 
     <!--Serving static files-->
     <div class="layout margin-top50">
       <h4 class="header-text">Serving static files</h4>
       <p class="text">
-        Nodemon is a utility tool that monitors changes in your Node.js application’s source code and automatically restarts the server when changes have been detected. It is very useful during development as it saves you time by not having to manually stop and restart your server yourself.
+        Static files are those files in our file system that are currently not acccesible in our routes. It could be the 'public' folder and it's subfolders and html-, css-, js files. When the express server is running and you go to your browser and type in 'localhoste:8080/public/pages/homepage/homepage.html'. We will get 'Cannot GET /public/pages/homepage/homepage.html'.
+      </p>
+      <p class="text">
+        By default Express doesn't allow to access to the static files, unless we have defined a route to a handler that returns the path as a response. If we want access to those files from the file system we can use the build-in middleware in Express, 'express.static();'. We need to call the medthod 'app.use()' and parse it the middleware and in the 'static()' method we specify the folder path from where we want to serve the static files, 'app.use(express.static("./public"))'. All the files in the public folder will now become available and we again try to access the files in the browser by typing in 'localhoste:8080/pages/homepage/homepage.html' and not include '/public', we can now see the homepage.html. The reason we don't need to specify the './public' folder in the URL is because if the route handler doesn't exist, Express will automaticly look in that public folder for that html-file. The same applies to the html if you have script  or an image 'scipt src= "/assets/js/main.js"'.
       </p>
     </div>
 
