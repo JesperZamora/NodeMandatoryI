@@ -1,49 +1,97 @@
 <section class="layout-container">
   <div class="layout-basis">
     <!--Export and Import-->
-    <div class="layout">
+    <div class="layout center-layout">
       <h4 class="header-text">Export and Import frontend</h4>
       <p class="text">
         When it comes down to manage JavaScript code in the frontend, we can organize it into modules and reuse them in other modules or import them into or HTML. For this we use Ecma Script modules (ES modules) and it enables us to export and import code from one module to another or import it into the frontend using the 'type=module' attribute. We could have a simple JavaScript file with a function that calculate the area for a rectangle. With this fuction we would add the keyword 'export' making it accessible for other modules to import or in the HTML. For example in the HTML we would specify that a script file should be treated as module by adding the 'type="module"' attribute to the 'script', like this 'scripts type="module" src="rectangle.js"'. The attribute instructs the browser to parse the script file as an ES module and makes it possible to import and export statments within that file.
       </p>
-    </div>
+      
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // retangle.js
 
-    <div class="layout center-layout">
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+        export const calculateArea = (length, width) => {
+          return length * width;
+        };
+
+        <script type="module" src="/rectangle.js"></script> 
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        < script type="module" src="/rectangle.js"></script>
+      </code></pre>
     </div>
 
     <!--CommonJs vs. ESM-->
-    <div class="layout margin-top50">
+    <div class="layout center-layout margin-top50">
       <h4 class="header-text">CommonJs vs. ES modules</h4>
       <p class="text">
         Both CommonJs and Ecma Script Modules, are module systems used for organizing and devide code into smaller easy reusable chunks of code. But there are some key differences between them.
       </p>
+
       <p class="text">
         CommonJs works synchronous, which means when a module is imported all other code execution is blocked until the module is fully loaded. It uses the 'const foo = require("path");' method to import a module and for exporting it a single value 'module.exports = value' and for multiple values 'module.exports = {value1, value2}'.
       </p>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const foo = require("./path");
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        module.exports = value;
+
+        module.exports = {value1, value2};
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <p class="text">
         When it comes to ES modules the module system works loading asynchronous, which is the other way around, so the code execution doesn't stop. When the module has been fully loaded it will be imported into the file you are importing it too. ESM it uses the 'import { foo } from "path";' and for exporting you place the export key word in front of the function or variable you want to export, 'export function foo(){}'. If you want to export a single default value it would be 'export defualt value;'.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import { calculateArea } from './rectangle.js';
+
+        import Rectangle from './rectangle.js';
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const calculateArea = (length, width) => {
+          return length * width;
+        };
+        
+        export default calculateArea;
+        
+      </code></pre>
     </div>
 
 
     <!--Serving static files-->
-    <div class="layout margin-top50">
+    <div class="layout center-layout margin-top50">
       <h4 class="header-text">Serving static files</h4>
       <p class="text">
         Static files are those files in our file system that are currently not acccesible in our routes. It could be the 'public' folder and it's subfolders and html-, css-, js files. When the express server is running and you go to your browser and type in 'localhoste:8080/public/pages/homepage/homepage.html'. We will get 'Cannot GET /public/pages/homepage/homepage.html'.
       </p>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import express from "express";
+        const app = express();
+
+        app.use(express.static("public"));
+      </code></pre>
       <p class="text">
         By default Express doesn't allow to access to the static files, unless we have defined a route to a handler that returns the path as a response. If we want access to those files from the file system we can use the build-in middleware in Express, 'express.static();'. We need to call the medthod 'app.use()' and parse it the middleware and in the 'static()' method we specify the folder path from where we want to serve the static files, 'app.use(express.static("./public"))'. All the files in the public folder will now become available and we again try to access the files in the browser by typing in 'localhoste:8080/pages/homepage/homepage.html' and not include '/public', we can now see the homepage.html. The reason we don't need to specify the './public' folder in the URL is because if the route handler doesn't exist, Express will automaticly look in that public folder for that html-file. The same applies to the html if you have script  or an image 'scipt src= "/assets/js/main.js"'.
       </p>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        < div class="heroImageContainer">
+          < img src="/assets/images/heroimg.jpg" alt="code-image">
+        < /div>
+      </code></pre>
     </div>
 
     <!--Fetch from client vs. backend-->
-    <div class="layout margin-top50">
+    <div class="layout center-layout margin-top50">
       <h4 class="header-text">Fetch from client vs. backend</h4>
       <p class="text">
         There is a difference when it comes to fetching data from the client side vs. the backend of a web application. From the client side fetching involves making a HTTP request in Javascript, directly to server and is typically used to interact with other web services or fetch resource from external APIs, such as datasets, images, scripts etc.
@@ -52,6 +100,34 @@
       <p class="text">
         From the backend fetching also involves making a HTTP request but from the server side and like in my 'Time to Deploy' project it was done in Node.js. In the backend fetching is used to fetch data from database or interact with other external APIs, like from 'Chat-GPT' or 'fakerjs', that was used in 'Time To Deploy' or DogInder project. In contrary to client side fetching, backend fetching can both involve synchronous and asynchronous operations where the fetch det resources, manipulate them an serve them to the client side through an API.
       </p>
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        async function main(subject) {
+          try {
+            content.push({ role: "user", content: subject });
+            const completion = await openai.chat.completions.create(...);
+            
+            // code ...
+            
+          } catch(error) {
+            console.error("Error", error);
+            throw error;
+          }
+        }
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        export default async function getMatches(numberOfMatches=5) {
+          const promises = [];
+          for (let i = 0; i <= numberOfMatches; i++) {
+              const promise = fetch("https://dog.ceo/api/breeds/image/random")
+              .then((response) => response.json());
+              promises.push(promise);
+          }
+          const results = await Promise.all(promises);
+          const matches = results.map((match) => ({ ...match, ...getIndianProfile() }));
+          return matches;
+        }
+      </code></pre>
       <p class="text">
         Other difference would be the control that backend has when fetching because it allows for a more control when it comes sensitive data and API keys that would be a security risk in the client side. Plus the backend implement policies for authentication and authorization.
       </p>
@@ -59,7 +135,7 @@
 
 
     <!--Structuring HTML-->
-    <div class="layout margin-top50">
+    <div class="layout center-layout margin-top50">
       <h4 class="header-text">HTML Semantics & Folder Structure</h4>
       <p class="text">
         When talking about HTML semantics it refers to using HTML elements that adds meaning to structuring a web page. By using elements like 'header', 'footer', 'main', 'section' etc. it provides context to your web page and makes it more readable / maintainable for developers. The 'header' element represents the top part of the page containing navigation menus or branding. The 'main' element is the middle part an contains the primary content that you want show for the specific web page, like a contact page it should contain contact information and not other topics. The 'footer' represents the bottom of the page typically containing the copyrights notice, contact info, cookie info, author.

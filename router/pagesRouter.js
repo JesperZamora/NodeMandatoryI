@@ -1,15 +1,15 @@
-import { 
-  homepagePage, 
-  introdutionPage, 
-  firstServerPage, 
-  servingHtmlFilesPage, 
-  timePage, 
-  exportImportPage, 
+import {
+  homepagePage,
+  introdutionPage,
+  firstServerPage,
+  servingHtmlFilesPage,
+  timePage,
+  exportImportPage,
   ssrPage,
-  routerPage, 
+  routerPage,
 } from "../util/readPages.js";
 
-import { Router } from "express"
+import { Router } from "express";
 const router = Router();
 
 //---------- HTML ----------//
@@ -32,17 +32,17 @@ router.get("/firstserver", (req, res) => {
 // Serving HTML files
 router.get("/servinghtmlfiles", (req, res) => {
   res.send(servingHtmlFilesPage);
-}); 
+});
 
 // Time
 router.get("/time", (req, res) => {
   res.send(timePage);
-}); 
+});
 
 // Export / Import
 router.get("/exportimport", (req, res) => {
   res.send(exportImportPage);
-}); 
+});
 
 // SSR
 router.get("/ssr", (req, res) => {
@@ -52,6 +52,6 @@ router.get("/ssr", (req, res) => {
 // Router
 router.get("/router", (req, res) => {
   res.send(routerPage);
-})
+});
 
 export default router;

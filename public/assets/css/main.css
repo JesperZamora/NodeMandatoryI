@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ nav {
   z-index: 999;
 }
 
-#navlinks a{
+#navlinks a {
   padding: 1px 5px 3px;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -113,15 +113,15 @@ footer p {
 }
 
 .hero img {
-  max-width: 430px; 
+  max-width: 430px;
   border-top-right-radius: 100px;
-  border-bottom-right-radius: 40px; 
+  border-bottom-right-radius: 40px;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 100px;
   box-shadow: 0px 2px 8px rgba(150, 150, 150, 0.8);
 }
 
-.roadmap {  
+.roadmap {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -139,14 +139,13 @@ footer p {
   border-radius: 4px;
   width: 340px;
   height: 210px;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .roadmapItem:hover {
   transform: scale(1.05);
   background-color: #eeeeef;
 }
-
 
 .roadmap a {
   text-decoration: none;
@@ -157,13 +156,12 @@ footer p {
   color: #000000;
 }
 
-.roadmapItem ul{
+.roadmapItem ul {
   line-height: 1.4rem;
   margin-left: 20px;
   list-style-type: disc;
   color: rgb(56, 56, 56);
 }
-
 
 /*---------Generic page layout----------*/
 .layout-container {
@@ -231,7 +229,11 @@ footer p {
   flex-direction: column;
 }
 
-.image-size300, .image-size400, .image-size500, .image-size600, .image-size700 {
+.image-size300,
+.image-size400,
+.image-size500,
+.image-size600,
+.image-size700 {
   margin: 25px;
   border-radius: 10px;
   border: solid 1px #d3d3d3;

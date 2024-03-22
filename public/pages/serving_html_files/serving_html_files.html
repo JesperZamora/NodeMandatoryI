@@ -12,14 +12,28 @@
       <p class="text">
         Under “normal” conditions you would have to start you application by writing `node app.js` for starting it and end it by `clt + c`, in your terminal. By not have to do these simple steps you save time and effort on not having to restart your app each time you have made a change, plus you can concentrate on writing code.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From terminal
+
+        PS C:\Users\jespe\Desktop\4.Semster\Node\NodeMandatoryI> node .\app.js
+        Server is running on port: 8080
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <p class="text">
         With nodemon you only need to type 'nodemon ./app.js' in your terminal and the nodemon will listen to changes made in your javascript files and restart the server.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemon.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        PS C:\Users\jespe\Desktop\4.Semster\Node\NodeMandatoryI> nodemon .\app.js
+        [nodemon] 3.1.0
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,json,html
+        [nodemon] starting `node .\app.js`
+        Server is running on port: 8080
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
@@ -27,7 +41,10 @@
       <p class="text">
         You can either install it locally or globally. The key difference is that locally you Nodemon are installed within the project’s directory and globally which allows for specific have customization. Each project can have its own version or can have specific needs of listening to specific files for changes. A global installation will make Nodemon accessible from any directory and you don’t have to install it every time you start a new project. But then the customization option is not flexible anymore.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodeinstall.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        >> npm install -g nodemon
+        >> npm install nodemon --save-dev
+      </code></pre>
       <p class="text">
         The 'npm install -g nodemon' will it install globally on your system, hence the '-g' and the will become available as a command-line tool for all directories.
       </p>
@@ -47,22 +64,44 @@
 
     <div class="layout center-layout">
       <h4 class="header-text size18">For loop:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/forloop.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        for(let i = 0; i < 5; i++) {
+          console.log(i);
+        }
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">While loop:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/whileloop.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        let i = 0;
+        while(i < 5) {
+          console.log(i);
+          i++;
+        }
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Do..While loop:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/dowhileloop.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        let i = 0;
+        do {
+          console.log(j);
+          j++;
+        } while(j < 5);
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">For... of loop:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/forofloop.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        for(const number of numbers) {
+          console.log(number);
+        }
+      </code></pre>
     </div>
 
     <div class="layout margin-top50">
@@ -73,27 +112,59 @@
 
     <div class="layout center-layout">
       <h4 class="header-text size18">ForEach:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/foreach.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        numbers.forEach((number) => {
+          console.log(number);
+        });
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Map:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/map.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        const doubleNumbers = numbers.map((number) =>  number * 2);
+
+        console.log(doubleNumbers);
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Filter:</h4>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/filter.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        const oddNumbers = numbers.filter((number) =>  number % 2 !== 0);
+
+        console.log(oddNumbers);
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Reduce:</h4>
-      <img class="image-size700 margin-top20 image-alignmid" src="/assets/images/servering_html/reduce.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        const sum = numbers.reduce((accumulator, currentValue) =>  accumulator + currentValue, 0);
+        
+        console.log(sum);
+      </code></pre>
     </div>
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Method chaining:</h4>
-      <img class="image-size400 margin-top20 image-alignmid" src="/assets/images/servering_html/methodchain.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        const doubleOddNumbers = numbers
+          .filter((number) =>  number % 2 !== 0)
+          .map((number) => number * 2);
+        
+        console.log(doubleOddNumbers);
+      </code></pre>
     </div>
 
 
@@ -113,18 +184,53 @@
 
     <div class="layout center-layout">
       <h4 class="header-text size18">Causing side effect</h4>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/causesideeffect.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        console.log("Start", numbers);
+        
+        for(let i = 0; i < numbers.length; i++) {
+          numbers[i] += 1;
+        }
+        
+        console.log("Finish", numbers); 
+
+        // Output: Start [ 1, 2, 3, 4, 5 ]
+        // Output: Finish [ 2, 3, 4, 5, 6 ]
+      </code></pre>
     </div>
 
     <div class="layout margin-top20 center-layout">
       <h4 class="header-text size18">Avoid side effect</h4>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/avoidsideeffect.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        const numbers = [1, 2, 3, 4, 5];
+
+        console.log("Start", numbers);
+        
+        const numbersAddOne = numbers.map((number) => number + 1);
+        console.log("Method loop:", numbersAddOne);
+        
+        console.log("Finish", numbers); 
+
+        // Output: Start [ 1, 2, 3, 4, 5 ]
+        // Method loop: [ 2, 3, 4, 5, 6 ]
+        // Output: Finish [ 1, 2, 3, 4, 5 ]
+      </code></pre>
     </div>
 
     <!--Anatomy of URL-->
     <div class="layout margin-top50 center-layout">
       <h4 class="header-text">Anatomy of URL</h4>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/urlanatomy.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        protocol    domain      endpoint
+        https://www.google.com/search?q=test&oq=test
+              sub-domain   top-level domain
+        
+        
+        path      query string
+        /search?q=test&oq=test
+                  query parameters 
+      </code></pre>
     </div>
 
     <div class="layout">
@@ -143,7 +249,38 @@
       <p class="text">
         The picture below shows a post request in express. Instead of getting values as params, we here instead get a JSON paylod sent in the request body. To make the payload available to us, we need to parse it because express does not parse the request body by default. So we use the middleware 'express.json()'. If we do not use this and we recieve a 'POST or PUT' request, we won't be able to access the JSON data and the attempt will result in 'undefined.'
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/expresspost.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // POST /drinks
+        app.post("/drinks", (req, res) => {
+          const requestBody = req.body;
+
+          if(isEmpty(requestBody)) {
+            return res.status(400).send({ data: "No payload." });
+          } else if (isValueEmpty(requestBody)) {
+            return res.status(400).send({ error: "Payload has empty value(s).", data: requestBody });
+          }
+
+          const brandExists = drinks.some((drink) => drink.brand === requestBody.brand);
+
+          if(brandExists) {
+            const drinkFound = drinks.find((drink) => drink.name === requestBody.name);
+            
+            if(drinkFound) {
+              return res.status(409).send({ data: "Drink already exists in the list." });
+            } else {
+              const newId = uniqueId();
+              const newDrink = { ...requestBody, id: newId };
+              drinks.push(newDrink);
+              return res.status(201).send({ data : newDrink })
+            }
+          }
+
+          const newId = uniqueId();
+          const newDrink = { ...requestBody, id: newId };
+          drinks.push(newDrink);
+          return res.status(201).send({ data: newDrink });
+        });
+      </code></pre>
     </div>
 
     <div class="layout center-layout margin-top20">
@@ -151,30 +288,74 @@
       <p class="text">
         Here we can see the use of postman sending a post request to our server and we recieve confirmation back as recieved by sending back the JSON data.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/postmanpost.png" alt="node-version">
+      
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // Post request from Postman -localhost:8080/drinks
+
+        {
+          "name": "Coke Cola",
+          "brand": "Pablo Escola",
+          "price": 2.39
+        }
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // Response
+
+        "date": {
+          {
+            "name": "Coke Cola",
+            "brand": "Pablo Escola",
+            "price": 2.39
+          }
+        }
+      </code></pre>
     </div>
 
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">Middleware express.json():</h4>
       <p class="text">
-        Here is how to make use of the middleware express.json() by a applying it to 'app.use()' contstructor.
+        Here is how to make use of the middleware 'express.json()' by a applying it to 'app.use()' contstructor.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparser.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        import express from "express";
+
+        const app = express();
+        
+        app.use(express.json());
+      </code></pre>
     </div>
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">With express.json():</h4>
       <p class="text">
-        Her we can see at the we have accessed the data in the route handlers 'req.body' and we are able to print it out to the terminal.
+        Here we can see at the we have accessed the data in the route handlers 'req.body' and we are able to print it out to the terminal.
       </p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/bodyparserpost.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        app.get("/drinks/:id", (req, res) => {
+          const drinkId = +req.params?.id;
+
+          // code ....
+        }
+      </code></pre>
+
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From terminal
+
+        { "name": "Coke Cola", "brand": "Pablo Escola", "price": 2.39 }
+      </code></pre>
     </div>
 
     <div class="layout center-layout margin-top20">
       <h4 class="header-text size18">Without express.json():</h4>
       <p class="text">Without the middleware to parse the JSON payload the result is 'undefined or null to object'.</p>
-      <img class="image-size500 margin-top20 image-alignmid" src="/assets/images/servering_html/nobodyparser.png" alt="node-version">
+      <pre class="language-javascript snippet-layout snippet-center"><code>
+        // From terminal
+        
+        undefined
+        TypeError: Cnnot convert undefined or null to object
+      </code></pre>
     </div>
   </div>
 </section>
