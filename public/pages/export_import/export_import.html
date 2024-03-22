@@ -17,7 +17,7 @@
 
     <!--CommonJs vs. ESM-->
     <div class="layout margin-top50">
-      <h4 class="header-text">CommonJs vs. ES6</h4>
+      <h4 class="header-text">CommonJs vs. ES modules</h4>
       <p class="text">
         Both CommonJs and Ecma Script Modules, are module systems used for organizing and devide code into smaller easy reusable chunks of code. But there are some key differences between them.
       </p>
@@ -45,12 +45,21 @@
       </p>
     </div>
 
-    <div class="layout center-layout">
+    <!--Fetch from client vs. backend-->
+    <div class="layout margin-top50">
+      <h4 class="header-text">Fetch from client vs. backend</h4>
       <p class="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia odio dolore blanditiis optio veniam, magni praesentium aperiam eveniet commodi totam deleniti error autem quam voluptas ex quaerat neque hic asperiores quod rerum molestiae. Aut commodi ipsum eveniet unde atque repellat.
+        There is a difference when it comes to fetching data from the client side vs. the backend of a web application. From the client side fetching involves making a HTTP request in Javascript, directly to server and is typically used to interact with other web services or fetch resource from external APIs, such as datasets, images, scripts etc.
+        When fetching happens from the client fetching is asynchronous and when the data is retrieved it does not need a full refresh of the web page.
       </p>
-      <img class="image-size600 margin-top20 image-alignmid" src="/assets/images/servering_html/nodemonnode.png" alt="node-version">
+      <p class="text">
+        From the backend fetching also involves making a HTTP request but from the server side and like in my 'Time to Deploy' project it was done in Node.js. In the backend fetching is used to fetch data from database or interact with other external APIs, like from 'Chat-GPT' or 'fakerjs', that was used in 'Time To Deploy' or DogInder project. In contrary to client side fetching, backend fetching can both involve synchronous and asynchronous operations where the fetch det resources, manipulate them an serve them to the client side through an API.
+      </p>
+      <p class="text">
+        Other difference would be the control that backend has when fetching because it allows for a more control when it comes sensitive data and API keys that would be a security risk in the client side. Plus the backend implement policies for authentication and authorization.
+      </p>
     </div>
+
 
     <!--Structuring HTML-->
     <div class="layout margin-top50">
